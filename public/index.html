@@ -112,41 +112,41 @@
             </div>
         </div>
     </div>
-    <canvas class="snow-container" id="snow-canvas"></canvas>
     <div class="progress-bar"></div>
     <header>
         <input type="checkbox" id="toggle" class="darkModeInput">
         <nav class="nav">
             <div class="logo"><a href="/">AARYA</a></div>
-            <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="navMenu"
-                aria-expanded="false">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-            <div class="menu" id="navMenu">
-                <a class="navlink" href="project.html">0.1 Projects = () =></a>
-                <a class="navlink" href="#about" onclick="scrollToAbout()">0.2 About = () =></a>
-                <a class="navlink" href="#skills" onclick="scrollToSkills()">0.3 My Skills = () =></a>
-                <a class="navlink" href="contact.html">0.4 Contact = () =></a>
-                <a href="https://docs.google.com/document/d/1TY298r-MzSnmakYuki44P1H-Vk1bLtRUUevDLhmkiDQ/edit?usp=sharing"
-                    target="_blank" class="resume-btn">RESUME</a>
+            <div class="nav-right">
+                <div class="menu" id="navMenu">
+                    <a class="navlink" href="project.html">0.1 Projects = () =></a>
+                    <a class="navlink" href="#about" onclick="scrollToAbout()">0.2 About = () =></a>
+                    <a class="navlink" href="#skills" onclick="scrollToSkills()">0.3 My Skills = () =></a>
+                    <a class="navlink" href="contact.html">0.4 Contact = () =></a>
+                    <a href="https://docs.google.com/document/d/1TY298r-MzSnmakYuki44P1H-Vk1bLtRUUevDLhmkiDQ/edit?usp=sharing"
+                        target="_blank" class="resume-btn">RESUME</a>
+                </div>
+                <label class="darkModeLabel" for="toggle" aria-label="Toggle dark/light theme" title="Toggle theme" tabindex="0">
+                    <div class="circle">
+                        <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
+                        </svg>
+                        <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </label>
+                <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="navMenu"
+                    aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </div>
         </nav>
     </header>
     <main>
-        <div class="card info-header">Indore, MP<p id="time"></p> <label class="darkModeLabel" for="toggle">
-                <div class="circle">
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
-                    </svg>
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path fill-rule="evenodd"
-                            d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z"
-                            clip-rule="evenodd" />
-                    </svg>
-                </div>
-            </label>
-        </div>
         <section id="hero" class="hero">
             <div class="hero-left">
                 <h2 class="title">&lt;Full Stack Developer /&gt;</h2>
@@ -170,109 +170,238 @@
                 </svg>
             </a>
         </section>
-        <section id="about" class="grid stacking-card">
-            <div class="card about">
-                <h2>ABOUT ME. . .</h2>
-                <div class="about-content">
-                    <div class="about-text">
+        <section id="about" class="about-section stacking-card">
+            <div class="about-container">
+                <div class="about-content-wrap">
+                    <div class="about-header-wrap">
+                        <h2 class="title">&lt;About Me /&gt;</h2>
+                        <div class="skills-title-line"></div>
+                    </div>
+                    <div class="about-description">
                         <p>
                             Hello! My name is <span class="shine-text">Aarya</span> and I’m a Full-Stack Developer
                             located
-                            in India and I have
-                            a serious
-                            passion for UI effects, animations and creating intuitive, dynamic user experiences.
+                            in India. I have a serious passion for UI effects, animations, and creating intuitive,
+                            dynamic
+                            user experiences.
+                        </p>
+                        <p>
                             Well-organised person, creative problem-solver who thrives on building and finding better
                             ways
-                            to do things. Fan of Gaming esports, outdoor activities and Web series.
+                            to do things. Fan of gaming, esports, outdoor activities, and web series.
                         </p>
                     </div>
-                    <img src="legoImage.jpg" alt="About Image" width="200" height="109" decoding="async"
-                        class="about-img" loading="lazy">
+                    <div class="about-status-box">
+                        <a class="contact-btn" href="contact.html">Contact Me</a>
+                    </div>
                 </div>
-            </div>
-            <div class="card now">
-                <h2>NOW. . .</h2>
-                <p class="now-para">
-                    I’m currently open to new opportunities like projects, freelance, or contract work. Whether you have
-                    a
-                    question or just want to say hi, feel free to reach out.I’d be happy to connect.<br />
-                </p>
-                <div class="now-actions">
-                    <a class="contact-btn" href="contact.html">Contact Me</a>
+                <div class="about-image-wrap">
+                    <div class="about-image-backdrop"></div>
+                    <img src="about.png" alt="About Aarya" width="460" height="421" decoding="async"
+                        class="about-hero-img" loading="lazy">
                 </div>
             </div>
         </section>
-        <!-- skill planet -->
+        <!-- SKILL AREA -->
         <section id="skills" class="skills-section stacking-card">
-            <h2 class="skills-title animated-header">Technical Skills</h2>
-            <div class="skill-list">
-                <div class="skill-category">
-                    <div class="skill-category-header">
-                        <i class="fa-solid fa-code"></i> <span>Frontend</span>
-                    </div>
-                    <span>&lt;ul&gt;</span></br>
-                    <span class="code-line">&lt;li&gt;</span>HTML5<span>&lt;/li&gt;</span></br>
-                    <span class="code-line">&lt;li&gt;</span>CSS3<span>&lt;/li&gt;</span></br>
-                    <span class="code-line">&lt;li&gt;</span>JavaScript<span>&lt;/li&gt;</span></br>
-                    <span class="code-line">&lt;li&gt;</span>TypeScript<span>&lt;/li&gt;</span></br>
-                    <span class="code-line">&lt;li&gt;</span>ReactJS<span>&lt;/li&gt;</span></br>
-                    <span class="code-line">&lt;li&gt;</span>NextJS<span>&lt;/li&gt;</span></br>
-                    <span class="code-line">&lt;li&gt;</span>Angular<span>&lt;/li&gt;</span></br>
-                    <span class="code-line">&lt;li&gt;</span>Tailwind<span>&lt;/li&gt;</span></br>
-                    <span class="code-line">&lt;li&gt;</span>Bootstrap<span>&lt;/li&gt;</span></br>
-                    <span>&lt;/ul&gt;</span>
+            <div class="skills-container">
+                <div class="skills-header-wrap">
+                    <h2 class="skills-area-title">SKILL AREA</h2>
+                    <div class="skills-title-line"></div>
                 </div>
-                <div class="skill-category">
-                    <div class="skill-category-header">
-                        <i class="fa-solid fa-server"></i> <span>Backend & DB</span>
+                <p class="skills-subtitle">
+                    Overview of my technical toolkit and professional proficiency, developed through years of experience
+                    and dedicated learning.
+                </p>
+
+                <div class="skills-showcase">
+                    <div class="hex-prism-stage" role="img"
+                        aria-label="Rotating hexagonal display of developer skill icons">
+                        <div class="hex-prism">
+                            <div class="hex-prism-face" style="--face-angle: 0deg">
+                                <div class="hex-skill"><img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                                        alt=""><span>HTML5</span></div>
+                                <div class="hex-skill"><img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                                        alt=""><span>CSS3</span></div>
+                                <div class="hex-skill"><img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                                        alt=""><span>JavaScript</span></div>
+                                <div class="hex-skill"><img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                                        alt=""><span>React</span></div>
+                            </div>
+                            <div class="hex-prism-face" style="--face-angle: 60deg">
+                                <div class="hex-skill"><img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                                        alt=""><span>TypeScript</span></div>
+                                <div class="hex-skill"><img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                                        alt=""><span>Next.js</span></div>
+                                <div class="hex-skill"><img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                                        alt=""><span>Git</span></div>
+                                <div class="hex-skill"><img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                                        alt=""><span>Node.js</span></div>
+                            </div>
+                            <div class="hex-prism-face" style="--face-angle: 120deg">
+                                <div class="hex-skill"><img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+                                        alt=""><span>MongoDB</span></div>
+                                <div class="hex-skill"><img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg"
+                                        alt=""><span>Angular</span></div>
+                                <div class="hex-skill"><img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
+                                        alt=""><span>Postman</span></div>
+                                <div class="hex-skill"><img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                                        alt=""><span>GitHub</span></div>
+                            </div>
+                            <div class="hex-prism-face" style="--face-angle: 180deg">
+                                <div class="hex-skill"><img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original.svg"
+                                        alt=""><span>Firebase</span></div>
+                                <div class="hex-skill"><img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/appwrite/appwrite-original.svg"
+                                        alt=""><span>Appwrite</span></div>
+                                <div class="hex-skill"><img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg"
+                                        alt=""><span>Canva</span></div>
+                                <div class="hex-skill"><img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg"
+                                        alt=""><span>Three.js</span></div>
+                            </div>
+                            <div class="hex-prism-face" style="--face-angle: 240deg">
+                                <div class="hex-skill"><img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg"
+                                        alt=""><span>Supabase</span></div>
+                                <div class="hex-skill"><img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg"
+                                        alt=""><span>Vercel</span></div>
+                                <div class="hex-skill"><img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original.svg"
+                                        alt=""><span>npm</span></div>
+                                <div class="hex-skill"><img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
+                                        alt=""><span>Figma</span></div>
+                            </div>
+                            <div class="hex-prism-face" style="--face-angle: 300deg">
+                                <div class="hex-skill"><img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chakraui/chakraui-original.svg"
+                                        alt=""><span>Chakra UI</span></div>
+                                <div class="hex-skill"><img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/primeng/primeng-original.svg"
+                                        alt=""><span>PrimeNG</span></div>
+                                <div class="hex-skill"><img
+                                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+                                        alt=""><span>Bootstrap</span></div>
+                            </div>
+                            <div class="hex-prism-cap" aria-hidden="true">SKILL<br>STACK</div>
+                        </div>
                     </div>
-                    <span>&lt;ul&gt;</span></br>
-                    <span class="code-line">&lt;li&gt;</span>NodeJS<span>&lt;/li&gt;</span></br>
-                    <span class="code-line">&lt;li&gt;</span>MongoDB<span>&lt;/li&gt;</span></br>
-                    <span class="code-line">&lt;li&gt;</span>Firebase<span>&lt;/li&gt;</span></br>
-                    <span class="code-line">&lt;li&gt;</span>Supabase<span>&lt;/li&gt;</span></br>
-                    <span class="code-line">&lt;li&gt;</span>Appwrite<span>&lt;/li&gt;</span></br>
-                    <span class="code-line">&lt;li&gt;</span>Postman<span>&lt;/li&gt;</span></br>
-                    <span>&lt;/ul&gt;</span>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-category-header">
-                        <i class="fa-solid fa-mobile-screen-button"></i> <span>Mobile & UI</span>
+
+                    <div class="skills-grid">
+                        <!-- Row 1 -->
+                        <div class="skill-card">
+                            <div class="skill-icon-circle">
+                                <i class="fa-brands fa-html5"></i>
+                            </div>
+                            <span class="skill-name">HTML5</span>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon-circle">
+                                <i class="fa-brands fa-css3-alt"></i>
+                            </div>
+                            <span class="skill-name">CSS3</span>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon-circle">
+                                <i class="fa-brands fa-js"></i>
+                            </div>
+                            <span class="skill-name">JAVASCRIPT</span>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon-circle">
+                                <i class="fa-brands fa-react"></i>
+                            </div>
+                            <span class="skill-name">REACT</span>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon-circle">
+                                <i class="fa-brands fa-node-js"></i>
+                            </div>
+                            <span class="skill-name">NODE.JS</span>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon-circle">
+                                <i class="fa-solid fa-server"></i>
+                            </div>
+                            <span class="skill-name">EXPRESS.JS</span>
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div class="skill-card">
+                            <div class="skill-icon-circle">
+                                <i class="fa-brands fa-python"></i>
+                            </div>
+                            <span class="skill-name">PYTHON</span>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon-circle">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+                            <span class="skill-name">SQL</span>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon-circle">
+                                <i class="fa-solid fa-leaf"></i>
+                            </div>
+                            <span class="skill-name">MONGODB</span>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon-circle">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <span class="skill-name">SEABORN</span>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon-circle">
+                                <i class="fa-solid fa-palette"></i>
+                            </div>
+                            <span class="skill-name">UI/UX DESIGN</span>
+                        </div>
+
+                        <div class="skill-card">
+                            <div class="skill-icon-circle">
+                                <svg class="skill-svg-icon" viewBox="0 0 128 128" width="28" height="28"
+                                    fill="currentColor">
+                                    <path
+                                        d="M64 0C28.7 0 0 28.7 0 64s28.7 64 64 64c11.2 0 21.7-2.9 30.8-7.9L48.4 55.3v36.6h-9.5V36.1h9.5l45.4 58.7c6.3-8.8 10.1-19.4 10.1-30.8 0-35.3-28.7-64-64-64zm15.6 36.1h9.5v28.8l-9.5-12.3V36.1z" />
+                                </svg>
+                            </div>
+                            <span class="skill-name">NEXT.JS</span>
+                        </div>
                     </div>
-                    <span>&lt;ul&gt;</span></br>
-                    <span class="code-line">&lt;li&gt;</span>React-Native<span>&lt;/li&gt;</span></br>
-                    <span class="code-line">&lt;li&gt;</span>ThreeJS<span>&lt;/li&gt;</span></br>
-                    <span class="code-line">&lt;li&gt;</span>gsap<span>&lt;/li&gt;</span></br>
-                    <span class="code-line">&lt;li&gt;</span>Figma<span>&lt;/li&gt;</span></br>
-                    <span>&lt;/ul&gt;</span>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-category-header">
-                        <i class="fa-solid fa-screwdriver-wrench"></i> <span>Tools & OS</span>
-                    </div>
-                    <span>&lt;ul&gt;</span></br>
-                    <span class="code-line">&lt;li&gt;</span>Git<span>&lt;/li&gt;</span></br>
-                    <span class="code-line">&lt;li&gt;</span>Github<span>&lt;/li&gt;</span></br>
-                    <span class="code-line">&lt;li&gt;</span>Linux<span>&lt;/li&gt;</span></br>
-                    <span class="code-line">&lt;li&gt;</span>JIRA<span>&lt;/li&gt;</span></br>
-                    <span>&lt;/ul&gt;</span>
                 </div>
             </div>
-            <section class="skill-planet stacking-card">
-                <div id="three-container"></div>
-                <div class="orbit-container">
-                    <div class="core" onclick="scrollToHero()">AARYA</div>
-                    <div class="orbit" id="orbit">
-                    </div>
-                </div>
-            </section>
-
         </section>
-        <section class="">
+        <section id="projects" class="projects-section">
             <h2 class="project-maintitle animated-header">My Projects</h2>
             <div class="featured-card-home stacking-card">
-                <div class="featured-image"><img src="electronicWebsitePc.webp" loading="lazy" decoding="async"
-                        alt="image" width="1920" height="910">
+                <div class="featured-image"><img src="Ai-finance-advisor.webp" loading="lazy" decoding="async"
+                        alt="AI Finance Advisor" width="1822" height="963">
                 </div>
                 <div>
                     <span class="badge">Web App</span>
@@ -302,8 +431,8 @@
                 </div>
             </div>
             <div class="featured-card-home stacking-card">
-                <div class="featured-image"><img src="family-management-app.webp" decoding="async" loading="lazy"
-                        alt="image" width="1847" height="962">
+                <div class="featured-image"><img src="Olist-Ecommerce-Analytics.webp" decoding="async" loading="lazy"
+                        alt="Olist E-Commerce Analytics" width="3075" height="1763">
                 </div>
                 <div>
                     <span class="badge">Web App</span>
@@ -340,24 +469,14 @@
         <div class="card contact">
             <h1>Social Link</h1>
             <div class="social-icons">
-                <a href="https://instagram.com/keenunisha" target="_blank" aria-label="Visit my Instagram profile">
-                    <i class="fa-brands fa-instagram social-icon" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/aarya-thkur-45884a236" target="_blank"
+                <a href="https://www.linkedin.com/in/tanya-sinha-0170742b3" target="_blank"
                     aria-label="Visit my LinkedIn profile">
                     <i class="fa-brands fa-linkedin social-icon" aria-hidden="true"></i>
                 </a>
-                <a href="https://discordapp.com/users/1453225181362262166" target="_blank"
-                    aria-label="Visit my Discord profile">
-                    <i class="fa-brands fa-discord social-icon" aria-hidden="true"></i>
-                </a>
-                <a href="https://github.com/AARYA77-dev" target="_blank" aria-label="Visit my GitHub profile">
+                <a href="https://github.com/tanya459" target="_blank" aria-label="Visit my GitHub profile">
                     <i class="fa-brands fa-github social-icon" aria-hidden="true"></i>
                 </a>
-                <a href="https://dev.to/aarya77dev" target="_blank" aria-label="Visit my DEV profile">
-                    <i class="fa-brands fa-dev social-icon" aria-hidden="true"></i>
-                </a>
-                <a href="mailto:hireaarya.dev@gmail.com" target="_blank" aria-label="Send me an email">
+                <a href="mailto:tanyasinha1514@gmail.com" target="_blank" aria-label="Send me an email">
                     <i class="fa-regular fa-envelope social-icon" aria-hidden="true"></i>
                 </a>
             </div>
@@ -368,7 +487,7 @@
         </div>
         <div class="copyright-bar">
             <span class="copyright-text">
-                &copy; <span id="copyright-year"></span> <strong>Aarya</strong>. All rights reserved.
+                &copy; <span id="copyright-year"></span> <strong>Tanya Sinha</strong>. All rights reserved.
             </span>
             <span class="copyright-made">
                 Made with <i class="fa-solid fa-heart copyright-heart"></i> using <i
@@ -430,7 +549,6 @@
         // Ensure hero section is visible and properly positioned
         gsap.set(".hero", { y: 0, opacity: 1 });
         gsap.set(".nav", { y: 0, opacity: 1 });
-        gsap.set(".info-header", { y: 0, opacity: 1 });
         gsap.set(".title", { y: 0, opacity: 1 });
         gsap.set(".image-ring", { scale: 1, opacity: 1 });
         gsap.set(".banner-arrow-wrap", { y: 0, opacity: 1 });
@@ -514,11 +632,10 @@
             }
         });
 
-        tl.to([".nav", ".info-header"], {
+        tl.to(".nav", {
             y: 0,
             opacity: 1,
             duration: 1,
-            stagger: 0.15,
             ease: "power2.out",
             force3D: true
         })
@@ -688,14 +805,6 @@
         });
     }
 
-    const now = new Date();
-    const time = now.toLocaleTimeString([], {
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: true
-    });
-    document.getElementById("time").textContent = time;
-
     function scrollToHero() {
         lenis.scrollTo("#hero");
     }
@@ -751,221 +860,6 @@
         });
     }
 
-    // Canvas-based Snow Particle System with Edge-Sliding Physics for Optimize Footer
-    let snowCanvas = null;
-    let snowCtx = null;
-    let snowAnimationId = null;
-    let particles = [];
-    const maxParticles = 100;
-
-    let footerBins = [];
-    const binSize = 6;
-    const maxPileHeight = 10;
-    let landedFlakes = [];
-
-    function initSnowCanvas() {
-        snowCanvas = document.getElementById("snow-canvas");
-        if (!snowCanvas) return;
-        snowCtx = snowCanvas.getContext("2d");
-
-        resizeSnowCanvas();
-        window.addEventListener("resize", resizeSnowCanvas);
-
-        particles = [];
-        for (let i = 0; i < maxParticles; i++) {
-            particles.push({
-                x: Math.random() * window.innerWidth,
-                y: Math.random() * window.innerHeight,
-                r: Math.random() * 2.5 + 1,
-                d: Math.random() * 1.2 + 0.6,
-                o: Math.random() * 0.8 + 0.2,
-                sway: Math.random() * Math.PI * 2,
-                swaySpeed: Math.random() * 0.03 + 0.01
-            });
-        }
-
-        if (snowAnimationId) {
-            cancelAnimationFrame(snowAnimationId);
-        }
-        animateSnow();
-    }
-
-    function resizeSnowCanvas() {
-        if (snowCanvas) {
-            snowCanvas.width = window.innerWidth;
-            snowCanvas.height = window.innerHeight;
-            footerBins = [];
-            landedFlakes = [];
-        }
-    }
-
-    function animateSnow() {
-        if (!snowCanvas || !snowCtx) return;
-
-        snowCtx.clearRect(0, 0, snowCanvas.width, snowCanvas.height);
-
-        const footerCard = document.querySelector(".optimize-footer .card") || document.querySelector(".optimize-footer");
-        let footerRect = null;
-        let numBins = 0;
-
-        if (footerCard) {
-            footerRect = footerCard.getBoundingClientRect();
-            numBins = Math.max(1, Math.ceil(footerRect.width / binSize) + 1);
-            if (footerBins.length !== numBins) {
-                const oldBins = footerBins;
-                footerBins = new Array(numBins).fill(0);
-                for (let b = 0; b < numBins; b++) {
-                    footerBins[b] = (oldBins && oldBins[b]) ? oldBins[b] : 0;
-                }
-            }
-        }
-
-        const edgeMargin = 22; // Edge boundary zone for slope gravity & falling
-
-        // 1. Update and draw falling background particles
-        for (let i = 0; i < maxParticles; i++) {
-            const p = particles[i];
-
-            snowCtx.beginPath();
-            snowCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2, true);
-            snowCtx.fillStyle = `rgba(255, 255, 255, ${p.o})`;
-            snowCtx.fill();
-
-            p.y += p.d;
-            p.sway += p.swaySpeed;
-            p.x += Math.sin(p.sway) * 0.6;
-
-            let targetY = snowCanvas.height + 15;
-            let isOnFooter = false;
-            let binIdx = -1;
-
-            if (footerRect && footerRect.top < snowCanvas.height && footerRect.bottom > 0) {
-                if (p.x >= footerRect.left && p.x <= footerRect.right) {
-                    binIdx = Math.floor((p.x - footerRect.left) / binSize);
-                    binIdx = Math.max(0, Math.min(numBins - 1, binIdx));
-                    const currentPile = footerBins[binIdx] || 0;
-                    targetY = footerRect.top - currentPile;
-                    isOnFooter = true;
-                }
-            }
-
-            if (p.y >= targetY) {
-                if (isOnFooter && binIdx >= 0) {
-                    const distLeft = p.x - footerRect.left;
-                    const distRight = footerRect.right - p.x;
-                    const isNearEdge = distLeft < edgeMargin || distRight < edgeMargin;
-
-                    const currentPile = footerBins[binIdx] || 0;
-                    if (!isNearEdge && currentPile < maxPileHeight) {
-                        footerBins[binIdx] += p.r * 0.4;
-                        if (binIdx > 0 && footerBins[binIdx - 1] < maxPileHeight) {
-                            footerBins[binIdx - 1] += p.r * 0.2;
-                        }
-                        if (binIdx < numBins - 1 && footerBins[binIdx + 1] < maxPileHeight) {
-                            footerBins[binIdx + 1] += p.r * 0.2;
-                        }
-                    }
-
-                    if (landedFlakes.length < 300) {
-                        let initVx = 0;
-                        let startsFalling = false;
-
-                        if (distLeft < edgeMargin) {
-                            initVx = -((edgeMargin - distLeft) / edgeMargin) * 0.8 - 0.3;
-                            startsFalling = distLeft < 6;
-                        } else if (distRight < edgeMargin) {
-                            initVx = ((edgeMargin - distRight) / edgeMargin) * 0.8 + 0.3;
-                            startsFalling = distRight < 6;
-                        }
-
-                        landedFlakes.push({
-                            relX: (p.x - footerRect.left) / (footerRect.width || 1),
-                            relY: -currentPile + (Math.random() * 2 - 1),
-                            vx: initVx,
-                            vy: startsFalling ? Math.random() * 0.5 + 0.3 : 0,
-                            isFalling: startsFalling,
-                            r: p.r,
-                            o: Math.min(0.95, p.o + 0.15)
-                        });
-                    }
-                }
-
-                particles[i] = {
-                    x: Math.random() * snowCanvas.width,
-                    y: -10,
-                    r: Math.random() * 2.5 + 1,
-                    d: Math.random() * 1.2 + 0.6,
-                    o: Math.random() * 0.8 + 0.2,
-                    sway: Math.random() * Math.PI * 2,
-                    swaySpeed: Math.random() * 0.03 + 0.01
-                };
-            }
-        }
-
-        // 2. Physics update & render for landed and edge-sliding snow flakes
-        if (footerRect && footerRect.top < snowCanvas.height && footerRect.bottom > 0) {
-            const footerW = footerRect.width || 1;
-
-            for (let k = landedFlakes.length - 1; k >= 0; k--) {
-                const lf = landedFlakes[k];
-                const lx = footerRect.left + lf.relX * footerW;
-
-                if (!lf.isFalling) {
-                    const distLeft = lx - footerRect.left;
-                    const distRight = footerRect.right - lx;
-
-                    if (distLeft < edgeMargin) {
-                        const slopeForce = (edgeMargin - distLeft) / edgeMargin;
-                        lf.vx -= slopeForce * 0.18;
-                    } else if (distRight < edgeMargin) {
-                        const slopeForce = (edgeMargin - distRight) / edgeMargin;
-                        lf.vx += slopeForce * 0.18;
-                    } else {
-                        lf.vx *= 0.88;
-                    }
-
-                    lf.relX += lf.vx / footerW;
-
-                    const newLx = footerRect.left + lf.relX * footerW;
-                    if (newLx < footerRect.left - 2 || newLx > footerRect.right + 2) {
-                        lf.isFalling = true;
-                        lf.vy = Math.random() * 0.5 + 0.4;
-                    }
-                } else {
-                    lf.vy += 0.2; // Gravity accelerating the snow off the edge
-                    lf.vx *= 0.98;
-                    lf.relX += lf.vx / footerW;
-                    lf.relY += lf.vy;
-
-                    if (footerRect.top + lf.relY > snowCanvas.height + 20) {
-                        landedFlakes.splice(k, 1);
-                        continue;
-                    }
-                }
-
-                snowCtx.beginPath();
-                snowCtx.arc(footerRect.left + lf.relX * footerW, footerRect.top + lf.relY, lf.r, 0, Math.PI * 2);
-                snowCtx.fillStyle = `rgba(255, 255, 255, ${lf.o})`;
-                snowCtx.fill();
-            }
-        }
-
-        snowAnimationId = requestAnimationFrame(animateSnow);
-    }
-
-    function stopSnow() {
-        if (snowAnimationId) {
-            cancelAnimationFrame(snowAnimationId);
-            snowAnimationId = null;
-        }
-        if (snowCanvas && snowCtx) {
-            snowCtx.clearRect(0, 0, snowCanvas.width, snowCanvas.height);
-        }
-        footerBins = [];
-        landedFlakes = [];
-        window.removeEventListener("resize", resizeSnowCanvas);
-    }
-
     const THEME_KEY = "theme";
     const toggle = document.getElementById("toggle");
 
@@ -1001,14 +895,6 @@
         const isDark = theme === "dark";
         document.body.classList.toggle("dark", isDark);
         if (toggle) toggle.checked = isDark;
-
-        if (typeof initSnowCanvas === "function") {
-            if (isDark) {
-                initSnowCanvas();
-            } else {
-                stopSnow();
-            }
-        }
     }
 
     function switchThemeWithRipple(theme) {
@@ -1048,7 +934,7 @@
             });
         } else {
             const isDark = theme === "dark";
-            const rippleColor = isDark ? "#0b1220" : "#eef5ff";
+            const rippleColor = isDark ? "#040711" : "#eef5ff";
 
             const ripple = document.createElement("div");
             ripple.className = "theme-ripple-overlay";
@@ -1093,433 +979,20 @@
             localStorage.setItem(THEME_KEY, theme);
             switchThemeWithRipple(theme);
         });
-    }
-</script>
 
-<!-- 3D skill icons -->
-
-<script type="module">
-    import * as THREE from "https://esm.sh/three@0.160.0";
-    import { OrbitControls } from "https://esm.sh/three@0.160.0/examples/jsm/controls/OrbitControls";
-
-    document.querySelector(".orbit-container").style.display = "none";
-
-    const skills = [
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/appwrite/appwrite-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chakraui/chakraui-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/primeng/primeng-original.svg",
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
-    ];
-    initThree();
-
-    function supportsWebGL() {
-        try {
-            const canvas = document.createElement("canvas");
-            return !!(
-                window.WebGLRenderingContext &&
-                (canvas.getContext("webgl") ||
-                    canvas.getContext("experimental-webgl"))
-            );
-        } catch {
-            return false;
-        }
-    }
-
-    function hideThreeSection() {
-        const threeDSection = document.querySelector("#three-container");
-        if (threeDSection) threeDSection.style.display = "none";
-        const orbitSection = document.querySelector(".orbit-container");
-        if (orbitSection) {
-            orbitSection.style.display = "flex";
-        }
-    }
-
-
-    function initThree() {
-        if (!supportsWebGL()) {
-            hideThreeSection();
-            const orbit = document.getElementById("orbit");
-            skills.forEach((skill, index) => {
-                orbit.insertAdjacentHTML(
-                    "beforeend",
-                    `
-                    <div class="planet-wrapper" style="--i:${index}">
-                        <div class="planet">
-                            <img
-                                src="${skill}"
-                                class="skill-icon"
-                                alt="logo"
-                            >
-                        </div>
-                    </div>
-                    `
-                );
-            });
-            return;
-        }
-
-        const container = document.getElementById("three-container");
-
-        if (!container) return;
-
-        let renderer;
-
-        try {
-            renderer = new THREE.WebGLRenderer({
-                antialias: true,
-                alpha: true
-            });
-        } catch (e) {
-            console.warn("WebGL renderer could not be created.", e);
-            hideThreeSection();
-            return;
-        }
-
-        let isVisible = true;
-
-        const observer = new IntersectionObserver((entries) => {
-            isVisible = entries[0].isIntersecting;
-            if (isVisible) animate();
-        });
-
-        observer.observe(container);
-
-        const scene = new THREE.Scene();
-
-        const height = Math.max(360, Math.min(560, container.clientWidth * 0.58));
-        const width = container.clientWidth;
-
-        const camera = new THREE.PerspectiveCamera(
-            55,
-            width / height,
-            0.1,
-            10000
-        );
-
-        camera.position.set(0, 0.45, width < 600 ? 16 : 12.5);
-
-        renderer.setSize(width, height);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        renderer.physicallyCorrectLights = true;
-        renderer.outputColorSpace = THREE.SRGBColorSpace;
-        renderer.toneMapping = THREE.ACESFilmicToneMapping;
-        renderer.toneMappingExposure = 1.25;
-
-        container.appendChild(renderer.domElement);
-
-        const controls = new OrbitControls(camera, renderer.domElement);
-        controls.enableZoom = false;
-        controls.enablePan = false;
-        controls.autoRotate = true;
-        controls.autoRotateSpeed = 0.65;
-        controls.minPolarAngle = Math.PI * 0.34;
-        controls.maxPolarAngle = Math.PI * 0.66;
-        controls.enableDamping = true;
-        controls.dampingFactor = 0.06;
-
-        scene.add(new THREE.AmbientLight(0x9db9ff, 1.45));
-
-        const keyLight = new THREE.DirectionalLight(0xffffff, 2.4);
-        keyLight.position.set(4, 6, 8);
-        scene.add(keyLight);
-
-        const rimLight = new THREE.PointLight(0x22d3ee, 2.8, 18);
-        rimLight.position.set(-5, -2, 5);
-        scene.add(rimLight);
-
-        const warmLight = new THREE.PointLight(0xfacc15, 1.25, 12);
-        warmLight.position.set(3, 2, 2);
-        scene.add(warmLight);
-
-        const group = new THREE.Group();
-        scene.add(group);
-
-        const orbitGroup = new THREE.Group();
-        scene.add(orbitGroup);
-
-        const planetPalette = [
-            "#60a5fa",
-            "#22d3ee",
-            "#a78bfa",
-            "#34d399",
-            "#facc15",
-            "#fb7185",
-            "#38bdf8",
-            "#f97316"
-        ];
-
-        const glowTexture = createGlowTexture();
-        const core = createCore(glowTexture);
-        scene.add(core);
-
-        const starField = createStars();
-        scene.add(starField);
-
-        const ringConfigs = [
-            { radius: 2.2, count: 6, speed: 0.0024, offset: 0 },
-            { radius: 3.8, count: 6, speed: -0.0018, offset: Math.PI / 6 },
-            { radius: 5.25, count: 6, speed: 0.00135, offset: Math.PI / 10 },
-            { radius: 6.45, count: 5, speed: -0.00105, offset: Math.PI / 5 }
-        ];
-
-        ringConfigs.forEach(({ radius }, index) => {
-            orbitGroup.add(createOrbitRing(radius, index));
-        });
-
-        skills.forEach((url, i) => {
-
-            const ring = getRingConfig(i);
-            const indexInRing = getIndexInRing(i);
-            const size = 0.34 + (i % 3) * 0.025;
-            const geometry = new THREE.SphereGeometry(size, 40, 40);
-            const color = new THREE.Color(planetPalette[i % planetPalette.length]);
-
-            const material = new THREE.MeshStandardMaterial({
-                color,
-                emissive: color,
-                emissiveIntensity: 0.18,
-                metalness: 0.18,
-                roughness: 0.38
-            });
-
-            const planet = new THREE.Mesh(geometry, material);
-
-            const angle = ring.offset + (indexInRing / ring.count) * Math.PI * 2;
-            const zWave = Math.sin(angle * 2) * 0.35;
-
-            planet.position.x = Math.sin(angle) * ring.radius;
-            planet.position.y = Math.cos(angle) * ring.radius * 0.5;
-            planet.position.z = zWave;
-            planet.userData = {
-                angle,
-                radius: ring.radius,
-                speed: ring.speed,
-                yScale: 0.5,
-                zOffset: zWave,
-                baseSize: size
-            };
-
-            group.add(planet);
-
-            const glow = new THREE.Sprite(new THREE.SpriteMaterial({
-                map: glowTexture,
-                color,
-                transparent: true,
-                opacity: 0.34,
-                depthWrite: false,
-                blending: THREE.AdditiveBlending
-            }));
-            glow.scale.set(size * 3.3, size * 3.3, 1);
-            planet.add(glow);
-
-            const img = new Image();
-
-            img.crossOrigin = "anonymous";
-
-            img.onload = () => {
-
-                const canvas = document.createElement("canvas");
-
-                canvas.width = 256;
-                canvas.height = 256;
-
-                const ctx = canvas.getContext("2d");
-
-                ctx.drawImage(img, 0, 0, 256, 256);
-
-                const texture = new THREE.CanvasTexture(canvas);
-
-                texture.needsUpdate = true;
-                texture.colorSpace = THREE.SRGBColorSpace;
-
-                const icon = new THREE.Sprite(new THREE.SpriteMaterial({
-                    map: texture,
-                    transparent: true,
-                    depthWrite: false
-                }));
-                icon.name = "skillIcon";
-                icon.renderOrder = 3;
-                icon.scale.set(size * 1.2, size * 1.2, 1);
-                scene.add(icon);
-                planet.userData.icon = icon;
-            };
-
-            img.src = url;
-        });
-
-        function getRingConfig(index) {
-            let start = 0;
-            for (const config of ringConfigs) {
-                if (index < start + config.count) return config;
-                start += config.count;
-            }
-            return ringConfigs[ringConfigs.length - 1];
-        }
-
-        function getIndexInRing(index) {
-            let start = 0;
-            for (const config of ringConfigs) {
-                if (index < start + config.count) return index - start;
-                start += config.count;
-            }
-            return index - start;
-        }
-
-        function createGlowTexture() {
-            const canvas = document.createElement("canvas");
-            canvas.width = 128;
-            canvas.height = 128;
-            const ctx = canvas.getContext("2d");
-            const gradient = ctx.createRadialGradient(64, 64, 0, 64, 64, 62);
-            gradient.addColorStop(0, "rgba(255,255,255,0.9)");
-            gradient.addColorStop(0.34, "rgba(96,165,250,0.38)");
-            gradient.addColorStop(1, "rgba(96,165,250,0)");
-            ctx.fillStyle = gradient;
-            ctx.fillRect(0, 0, 128, 128);
-            return new THREE.CanvasTexture(canvas);
-        }
-
-        function createCore(glowTexture) {
-            const coreGroup = new THREE.Group();
-
-            const coreGeo = new THREE.IcosahedronGeometry(0.96, 5);
-            const coreMat = new THREE.MeshPhysicalMaterial({
-                color: "#60a5fa",
-                emissive: "#2563eb",
-                emissiveIntensity: 0.55,
-                roughness: 0.18,
-                metalness: 0.08,
-                clearcoat: 1,
-                clearcoatRoughness: 0.08
-            });
-            coreGroup.add(new THREE.Mesh(coreGeo, coreMat));
-
-            const halo = new THREE.Sprite(new THREE.SpriteMaterial({
-                map: glowTexture,
-                color: "#38bdf8",
-                transparent: true,
-                opacity: 0.56,
-                depthWrite: false,
-                blending: THREE.AdditiveBlending
-            }));
-            halo.scale.set(4.3, 4.3, 1);
-            coreGroup.add(halo);
-
-            return coreGroup;
-        }
-
-        function createOrbitRing(radius, index) {
-            const curve = new THREE.EllipseCurve(0, 0, radius, radius * 0.5, 0, Math.PI * 2);
-            const points = curve.getPoints(220);
-            const geometry = new THREE.BufferGeometry().setFromPoints(points);
-            const material = new THREE.LineDashedMaterial({
-                color: index % 2 ? 0x60a5fa : 0x22d3ee,
-                transparent: true,
-                opacity: 0.32,
-                dashSize: 0.12,
-                gapSize: 0.16
-            });
-            const ring = new THREE.Line(geometry, material);
-            ring.computeLineDistances();
-            return ring;
-        }
-
-        function createStars() {
-            const starCount = 420;
-            const positions = new Float32Array(starCount * 3);
-
-            for (let i = 0; i < starCount; i++) {
-                positions[i * 3] = (Math.random() - 0.5) * 22;
-                positions[i * 3 + 1] = (Math.random() - 0.5) * 12;
-                positions[i * 3 + 2] = -4 - Math.random() * 12;
-            }
-
-            const geometry = new THREE.BufferGeometry();
-            geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-
-            const material = new THREE.PointsMaterial({
-                color: 0xdbeafe,
-                size: 0.035,
-                transparent: true,
-                opacity: 0.75,
-                depthWrite: false
-            });
-
-            return new THREE.Points(geometry, material);
-        }
-
-        const planetWorldPosition = new THREE.Vector3();
-        const cameraToPlanet = new THREE.Vector3();
-
-        function animate() {
-            if (!isVisible) return;
-
-            requestAnimationFrame(animate);
-
-            controls.update();
-
-            group.rotation.z += 0.0016;
-            orbitGroup.rotation.z += 0.0016;
-            core.rotation.y += 0.006;
-            core.rotation.x += 0.002;
-            starField.rotation.z -= 0.00022;
-
-            group.children.forEach((planet) => {
-                planet.userData.angle += planet.userData.speed;
-                planet.position.x = Math.sin(planet.userData.angle) * planet.userData.radius;
-                planet.position.y = Math.cos(planet.userData.angle) * planet.userData.radius * planet.userData.yScale;
-                planet.position.z = planet.userData.zOffset + Math.sin(planet.userData.angle * 1.7) * 0.18;
-                if (planet.userData.icon) {
-                    planet.getWorldPosition(planetWorldPosition);
-                    cameraToPlanet
-                        .copy(camera.position)
-                        .sub(planetWorldPosition)
-                        .normalize()
-                        .multiplyScalar(planet.userData.baseSize + 0.03);
-
-                    planet.userData.icon.position
-                        .copy(planetWorldPosition)
-                        .add(cameraToPlanet);
+        const toggleLabel = document.querySelector(".darkModeLabel");
+        if (toggleLabel) {
+            toggleLabel.addEventListener("keydown", (e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    toggle.checked = !toggle.checked;
+                    toggle.dispatchEvent(new Event("change"));
                 }
             });
-
-            renderer.render(scene, camera);
         }
-
-        animate();
-
-        window.addEventListener("resize", () => {
-            const newWidth = container.clientWidth;
-            const newHeight = Math.max(360, Math.min(560, newWidth * 0.58));
-
-            camera.aspect = newWidth / newHeight;
-            camera.position.z = newWidth < 600 ? 16 : 12.5;
-            camera.updateProjectionMatrix();
-
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-            renderer.setSize(newWidth, newHeight);
-        });
     }
 </script>
+
 
 </body>
 
