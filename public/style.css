@@ -1650,10 +1650,10 @@ body:not(.dark) .skills-subtitle {
 }
 
 .skill-card:hover {
-    transform: translateY(-6px);
-    border-color: #00f5ff;
+    transform: translateY(-4px);
+    border-color: rgba(0, 245, 255, 0.4);
     background: rgba(8, 20, 42, 0.95);
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 245, 255, 0.35);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
 }
 
 body:not(.dark) .skill-card {
@@ -1665,7 +1665,7 @@ body:not(.dark) .skill-card {
 body:not(.dark) .skill-card:hover {
     background: #ffffff;
     border-color: #0284c7;
-    box-shadow: 0 14px 28px rgba(2, 132, 199, 0.18);
+    box-shadow: 0 10px 20px rgba(2, 132, 199, 0.1);
 }
 
 .skill-icon-circle {
@@ -1680,14 +1680,15 @@ body:not(.dark) .skill-card:hover {
     border: 1px solid rgba(0, 245, 255, 0.25);
     color: #00f5ff;
     font-size: 26px;
-    transition: transform 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 }
 
 .skill-card:hover .skill-icon-circle {
-    transform: scale(1.1);
-    color: #ffffff;
-    background: #00f5ff;
-    box-shadow: 0 0 22px rgba(0, 245, 255, 0.75);
+    transform: translateY(-2px);
+    color: #00f5ff;
+    border-color: rgba(0, 245, 255, 0.6);
+    background: rgba(0, 245, 255, 0.08);
+    box-shadow: none;
 }
 
 body:not(.dark) .skill-icon-circle {
@@ -1697,9 +1698,10 @@ body:not(.dark) .skill-icon-circle {
 }
 
 body:not(.dark) .skill-card:hover .skill-icon-circle {
-    color: #ffffff;
-    background: #0284c7;
-    box-shadow: 0 0 18px rgba(2, 132, 199, 0.3);
+    color: #0284c7;
+    border-color: #0284c7;
+    background: #f0f9ff;
+    box-shadow: none;
 }
 
 .skill-name {
