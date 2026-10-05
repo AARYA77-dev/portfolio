@@ -394,7 +394,8 @@
                                 <div class="hex-skill"><i class="fa-solid fa-broom"></i><span>Data Cleaning</span></div>
                                 <div class="hex-skill"><i class="fa-solid fa-brain"></i><span>Business Intelligence</span></div>
                             </div>
-                            <div class="hex-prism-cap" aria-hidden="true">SKILL<br>STACK</div>
+                            <div class="hex-prism-cap hex-prism-cap-top" aria-hidden="true"></div>
+                            <div class="hex-prism-cap hex-prism-cap-bottom" aria-hidden="true"></div>
                         </div>
                     </div>
 
@@ -1108,11 +1109,111 @@
             });
         }
     }
+
+    // 3D Hexagonal Prism Interactive Cursor Drag & Smooth Rotation
+    (function initHexPrismDrag() {
+        const stage = document.querySelector('.hex-prism-stage');
+        const prism = document.querySelector('.hex-prism');
+        if (!stage || !prism) return;
+
+        prism.classList.add('is-interactive');
+
+        let currentRotY = 0;
+        let targetRotY = 0;
+        let currentRotX = -12;
+        let targetRotX = -12;
+
+        let isDragging = false;
+        let lastPointerX = 0;
+        let lastPointerY = 0;
+        let velocityX = 0;
+        let velocityY = 0;
+        let isHovered = false;
+        const autoRotateSpeed = 0.25;
+
+        function onPointerDown(e) {
+            if (e.button !== undefined && e.button !== 0) return;
+            isDragging = true;
+            stage.classList.add('is-dragging');
+            lastPointerX = e.clientX;
+            lastPointerY = e.clientY;
+            velocityX = 0;
+            velocityY = 0;
+            try {
+                stage.setPointerCapture(e.pointerId);
+            } catch (_) {}
+        }
+
+        function onPointerMove(e) {
+            if (isDragging) {
+                const dx = e.clientX - lastPointerX;
+                const dy = e.clientY - lastPointerY;
+                velocityX = dx * 0.45;
+                velocityY = dy * 0.25;
+                targetRotY += velocityX;
+                targetRotX = Math.max(-32, Math.min(12, targetRotX - velocityY));
+                lastPointerX = e.clientX;
+                lastPointerY = e.clientY;
+            } else if (isHovered) {
+                const rect = stage.getBoundingClientRect();
+                const relY = (e.clientY - rect.top) / rect.height - 0.5;
+                targetRotX = -12 + relY * 10;
+            }
+        }
+
+        function onPointerUp(e) {
+            if (!isDragging) return;
+            isDragging = false;
+            stage.classList.remove('is-dragging');
+            try {
+                stage.releasePointerCapture(e.pointerId);
+            } catch (_) {}
+        }
+
+        stage.addEventListener('pointerdown', onPointerDown);
+        window.addEventListener('pointermove', onPointerMove, { passive: true });
+        window.addEventListener('pointerup', onPointerUp);
+        window.addEventListener('pointercancel', onPointerUp);
+
+        stage.addEventListener('pointerenter', () => { isHovered = true; });
+        stage.addEventListener('pointerleave', () => {
+            isHovered = false;
+            if (!isDragging) {
+                targetRotX = -12;
+            }
+        });
+
+        function tick() {
+            if (!isDragging) {
+                if (Math.abs(velocityX) > 0.02) {
+                    targetRotY += velocityX;
+                    velocityX *= 0.94;
+                } else {
+                    velocityX = 0;
+                    if (!isHovered) {
+                        targetRotY += autoRotateSpeed;
+                    }
+                }
+
+                if (Math.abs(velocityY) > 0.02) {
+                    targetRotX = Math.max(-32, Math.min(12, targetRotX - velocityY));
+                    velocityY *= 0.92;
+                } else {
+                    velocityY = 0;
+                }
+            }
+
+            currentRotY += (targetRotY - currentRotY) * 0.12;
+            currentRotX += (targetRotX - currentRotX) * 0.12;
+
+            prism.style.transform = `rotateX(${currentRotX.toFixed(2)}deg) rotateY(${currentRotY.toFixed(2)}deg)`;
+
+            requestAnimationFrame(tick);
+        }
+
+        requestAnimationFrame(tick);
+    })();
 </script>
 
-
 </body>
-
-</html>
-
 </html>
