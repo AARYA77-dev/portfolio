@@ -139,6 +139,7 @@ h1 span {
     font-weight: 900;
     letter-spacing: 4px;
     background: linear-gradient(135deg, #00f5ff 0%, #38bdf8 50%, #818cf8 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 0 25px rgba(0, 245, 255, 0.5));
@@ -631,13 +632,13 @@ nav::before {
     border: 1.5px solid rgba(0, 245, 255, 0.45);
     box-shadow: 0 0 16px rgba(0, 245, 255, 0.25);
     transition: inset 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-                top 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-                left 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-                width 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-                height 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-                right 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-                bottom 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-                opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+        top 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+        left 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+        width 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+        height 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+        right 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+        bottom 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 1;
 }
 
@@ -954,6 +955,7 @@ body.dark .hero-greeting {
 
 .hero-name-gradient {
     background: linear-gradient(135deg, #00f5ff 0%, #38bdf8 50%, #818cf8 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
@@ -978,6 +980,7 @@ body.dark .hero-role-title {
 
 .role-highlight {
     background: linear-gradient(90deg, #00f5ff, #818cf8);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
