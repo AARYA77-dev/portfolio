@@ -51,4 +51,42 @@
     window.addEventListener("pageshow", (e) => {
         if (e.persisted) gsap.set(tiles, { width: "0%", left: "0%" });
     });
+
+    // 3. Ultra-smooth Sliding Navbar Pill (eliminates gap drops & missed frames)
+    function setupNavHoverIndicator() {
+        const nav = document.querySelector(".nav");
+        if (!nav) return;
+        const links = nav.querySelectorAll(".navlink");
+        if (!links.length) return;
+
+        let hideTimer;
+
+        links.forEach((link) => {
+            link.addEventListener("mouseenter", () => {
+                clearTimeout(hideTimer);
+                const navRect = nav.getBoundingClientRect();
+                const linkRect = link.getBoundingClientRect();
+                nav.style.setProperty("--nav-left", `${Math.round(linkRect.left - navRect.left)}px`);
+                nav.style.setProperty("--nav-top", `${Math.round(linkRect.top - navRect.top)}px`);
+                nav.style.setProperty("--nav-width", `${Math.round(linkRect.width)}px`);
+                nav.style.setProperty("--nav-height", `${Math.round(linkRect.height)}px`);
+                nav.classList.add("is-hovering");
+            });
+        });
+
+        const menu = nav.querySelector(".menu");
+        if (menu) {
+            menu.addEventListener("mouseleave", () => {
+                hideTimer = setTimeout(() => {
+                    nav.classList.remove("is-hovering");
+                }, 80);
+            });
+        }
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", setupNavHoverIndicator);
+    } else {
+        setupNavHoverIndicator();
+    }
 })();

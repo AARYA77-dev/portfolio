@@ -587,7 +587,70 @@ body:not(.dark) .project-icon {
     font-weight: 700;
     color: #EAF2FF;
     position: relative;
-    padding-bottom: 2px;
+    padding: 7px 16px;
+    border-radius: var(--radius-sm);
+    transition: color 0.2s ease;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Default anchor so --hovered-nav is always valid in the layout tree */
+.navlink:first-of-type {
+    anchor-name: --hovered-nav;
+}
+
+.navlink:hover,
+.navlink:focus-visible {
+    anchor-name: --hovered-nav;
+    color: #00f5ff;
+}
+
+body:not(.dark) .navlink:hover,
+body:not(.dark) .navlink:focus-visible {
+    color: #0284c7;
+}
+
+/* High-Performance CSS Anchor Positioning Navbar Sliding Pill */
+nav::before {
+    content: "";
+    position: absolute;
+    position-anchor: --hovered-nav;
+    top: var(--nav-top, anchor(top));
+    left: var(--nav-left, anchor(left));
+    right: var(--nav-right, anchor(right));
+    bottom: var(--nav-bottom, anchor(bottom));
+    width: var(--nav-width, auto);
+    height: var(--nav-height, auto);
+    inset: anchor(top) anchor(right) anchor(bottom) anchor(left);
+    pointer-events: none;
+    opacity: 0;
+    border-radius: var(--radius-sm);
+    background: rgba(0, 245, 255, 0.12);
+    border: 1.5px solid rgba(0, 245, 255, 0.45);
+    box-shadow: 0 0 16px rgba(0, 245, 255, 0.25);
+    transition: inset 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                top 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                left 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                width 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                height 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                right 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                bottom 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+}
+
+nav:has(.navlink:hover)::before,
+nav:has(.navlink:focus-visible)::before,
+nav.is-hovering::before {
+    opacity: 1;
+}
+
+body:not(.dark) nav::before {
+    background: rgba(2, 132, 199, 0.1);
+    border-color: rgba(2, 132, 199, 0.35);
+    box-shadow: 0 2px 10px rgba(2, 132, 199, 0.12);
 }
 
 .navlink::after {
@@ -605,6 +668,12 @@ body:not(.dark) .project-icon {
 .navlink:hover::after {
     left: 0;
     width: 100%;
+}
+
+@supports (anchor-name: --test) {
+    .navlink::after {
+        display: none !important;
+    }
 }
 
 .logo {
@@ -677,9 +746,13 @@ body:not(.dark) .resume-btn:hover {
     transform: translateY(0);
 }
 
-.menu a {
-    margin-left: 16px;
+.menu a.navlink {
+    margin-left: 0;
     font-weight: bold;
+}
+
+.menu .resume-btn {
+    margin-left: 14px;
 }
 
 @media (max-width: 1024px) and (min-width: 769px) {
@@ -798,6 +871,10 @@ body:not(.dark) .resume-btn:hover {
     .nav:not(:has(.menu-toggle)) .menu a {
         margin-left: 0;
         font-size: 10px;
+    }
+
+    nav::before {
+        display: none;
     }
 }
 
