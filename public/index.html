@@ -97,6 +97,119 @@
         </div>
     </div>
     <div class="progress-bar"></div>
+    <!-- Outermost UI Viewport Edge Microchip Circuit Traces (Directly on screen borders) -->
+    <div class="ui-edge-circuits-container" aria-hidden="true">
+        <!-- Top-Right Edge (Matches reference image directly on viewport edge) -->
+        <div class="ui-edge-circuit edge-top-right">
+            <svg class="ui-circuit-svg" viewBox="0 0 450 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="edge-circuit-glow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="3" result="blur" />
+                        <feMerge>
+                            <feMergeNode in="blur" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                </defs>
+
+                <!-- Circuit Bus Lines (Entering from top & right edges, identical to reference) -->
+                <path class="circuit-path" d="M220 0 V25 L185 60 H70" />
+                <path class="circuit-path" d="M290 0 V40 L255 75 H130" />
+                <path class="circuit-path" d="M340 0 V30 L310 60 H210" />
+                <path class="circuit-path" d="M390 0 V70 L350 110 H180" />
+
+                <!-- Parallel Horizontal Bus Lines from Right Edge (Matching photo) -->
+                <path class="circuit-path" d="M450 120 H360 L325 155 H200" />
+                <path class="circuit-path" d="M450 160 H345 L310 195 H150" />
+                <path class="circuit-path" d="M450 200 H330 L295 235 H95" />
+                <path class="circuit-path" d="M450 240 H380 L350 270 H240" />
+
+                <!-- Stepped Connector Branch -->
+                <path class="circuit-path" d="M325 155 V200 L290 235 V280" />
+
+                <!-- Terminal Connection Node Dots -->
+                <circle class="circuit-node" cx="70" cy="60" r="4.5" />
+                <circle class="circuit-node" cx="130" cy="75" r="4.5" />
+                <circle class="circuit-node" cx="210" cy="60" r="4.5" />
+                <circle class="circuit-node" cx="180" cy="110" r="4.5" />
+                <circle class="circuit-node" cx="200" cy="155" r="4.5" />
+                <circle class="circuit-node" cx="150" cy="195" r="4.5" />
+                <circle class="circuit-node" cx="95" cy="235" r="4.5" />
+                <circle class="circuit-node" cx="240" cy="270" r="4.5" />
+                <circle class="circuit-node" cx="290" cy="280" r="4.5" />
+
+                <!-- Edge Entry Junction Markers -->
+                <circle class="circuit-node node-small" cx="220" cy="4" r="3" />
+                <circle class="circuit-node node-small" cx="290" cy="4" r="3" />
+                <circle class="circuit-node node-small" cx="340" cy="4" r="3" />
+                <circle class="circuit-node node-small" cx="390" cy="4" r="3" />
+                <circle class="circuit-node node-small" cx="446" cy="120" r="3" />
+                <circle class="circuit-node node-small" cx="446" cy="160" r="3" />
+                <circle class="circuit-node node-small" cx="446" cy="200" r="3" />
+                <circle class="circuit-node node-small" cx="446" cy="240" r="3" />
+            </svg>
+        </div>
+
+        <!-- Top-Left Edge -->
+        <div class="ui-edge-circuit edge-top-left">
+            <svg class="ui-circuit-svg" viewBox="0 0 360 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="circuit-path" d="M0 90 H80 L115 125 H220" />
+                <path class="circuit-path" d="M0 130 H60 L95 165 H170" />
+                <path class="circuit-path" d="M140 0 V40 L175 75 H270" />
+                <path class="circuit-path" d="M200 0 V25 L230 55 H320" />
+
+                <circle class="circuit-node" cx="220" cy="125" r="4.5" />
+                <circle class="circuit-node" cx="170" cy="165" r="4.5" />
+                <circle class="circuit-node" cx="270" cy="75" r="4.5" />
+                <circle class="circuit-node" cx="320" cy="55" r="4.5" />
+
+                <circle class="circuit-node node-small" cx="4" cy="90" r="3" />
+                <circle class="circuit-node node-small" cx="4" cy="130" r="3" />
+                <circle class="circuit-node node-small" cx="140" cy="4" r="3" />
+                <circle class="circuit-node node-small" cx="200" cy="4" r="3" />
+            </svg>
+        </div>
+
+        <!-- Bottom-Left Edge -->
+        <div class="ui-edge-circuit edge-bottom-left">
+            <svg class="ui-circuit-svg" viewBox="0 0 380 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="circuit-path" d="M0 80 H80 L115 115 H210" />
+                <path class="circuit-path" d="M0 120 H65 L100 155 H165 L195 185 H280" />
+                <path class="circuit-path" d="M0 160 H50 L85 195 H190" />
+                <path class="circuit-path" d="M120 260 V220 L155 185 H240" />
+                <path class="circuit-path" d="M180 260 V235 L205 210 H320" />
+
+                <circle class="circuit-node" cx="210" cy="115" r="4.5" />
+                <circle class="circuit-node" cx="280" cy="185" r="4.5" />
+                <circle class="circuit-node" cx="190" cy="195" r="4.5" />
+                <circle class="circuit-node" cx="240" cy="185" r="4.5" />
+                <circle class="circuit-node" cx="320" cy="210" r="4.5" />
+
+                <circle class="circuit-node node-small" cx="4" cy="80" r="3" />
+                <circle class="circuit-node node-small" cx="4" cy="120" r="3" />
+                <circle class="circuit-node node-small" cx="4" cy="160" r="3" />
+                <circle class="circuit-node node-small" cx="120" cy="256" r="3" />
+                <circle class="circuit-node node-small" cx="180" cy="256" r="3" />
+            </svg>
+        </div>
+
+        <!-- Bottom-Right Edge -->
+        <div class="ui-edge-circuit edge-bottom-right">
+            <svg class="ui-circuit-svg" viewBox="0 0 360 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="circuit-path" d="M360 130 H270 L235 95 H130" />
+                <path class="circuit-path" d="M360 170 H290 L255 135 H170" />
+                <path class="circuit-path" d="M210 260 V220 L175 185 H80" />
+
+                <circle class="circuit-node" cx="130" cy="95" r="4.5" />
+                <circle class="circuit-node" cx="170" cy="135" r="4.5" />
+                <circle class="circuit-node" cx="80" cy="185" r="4.5" />
+
+                <circle class="circuit-node node-small" cx="356" cy="130" r="3" />
+                <circle class="circuit-node node-small" cx="356" cy="170" r="3" />
+                <circle class="circuit-node node-small" cx="210" cy="256" r="3" />
+            </svg>
+        </div>
+    </div>
     <header>
         <input type="checkbox" id="toggle" class="darkModeInput">
         <nav class="nav">
@@ -494,6 +607,9 @@
         // Ensure all elements are immediately visible when skipped
         gsap.set(".hero, .nav, .title, .hero-avatar-showcase, .banner-arrow-wrap", { opacity: 1, y: 0, x: 0, scale: 1 });
         gsap.set(".hero-social-btn, .hero-btn, .hero-orbit-dot, .hero-pill", { scale: 1, rotation: 0, opacity: 1 });
+        gsap.set(".ui-edge-circuits-container", { opacity: 1, visibility: "visible" });
+        gsap.set(".circuit-path", { strokeDashoffset: 0 });
+        gsap.set(".circuit-node", { scale: 1, opacity: 1 });
 
         titleAnimation();
         stackingAnimation();
@@ -501,6 +617,14 @@
 
     function runHomeAnimation() {
         gsap.registerPlugin(ScrollTrigger);
+
+        // Pre-configure microchip circuit paths for GSAP draw animation
+        const circuitPaths = document.querySelectorAll(".circuit-path");
+        circuitPaths.forEach(p => {
+            const len = p.getTotalLength ? Math.ceil(p.getTotalLength()) : 250;
+            p.style.strokeDasharray = len;
+            p.style.strokeDashoffset = len;
+        });
 
         const tl = gsap.timeline({
             defaults: { ease: "power3.out" },
@@ -510,6 +634,20 @@
                 titleAnimation();
                 stackingAnimation();
                 ScrollTrigger.refresh();
+
+                // Ambient breathing pulse on terminal connection nodes
+                gsap.to(".circuit-node", {
+                    scale: 1.25,
+                    opacity: 0.75,
+                    duration: 1.6,
+                    repeat: -1,
+                    yoyo: true,
+                    stagger: {
+                        each: 0.12,
+                        from: "random"
+                    },
+                    ease: "sine.inOut"
+                });
             }
         });
 
@@ -604,6 +742,24 @@
                 { x: 90, scale: 0.6, opacity: 0 },
                 { x: 0, scale: 1, opacity: 1, duration: 1.0, ease: "power3.out" },
                 "-=1.15"
+            )
+            // Reveal edge circuits as hero opens
+            .fromTo(".ui-edge-circuits-container",
+                { opacity: 0, visibility: "visible" },
+                { opacity: 1, duration: 0.5 },
+                "-=0.9"
+            )
+            // Animate microchip circuit paths drawing outward dynamically!
+            .fromTo(".circuit-path",
+                { strokeDashoffset: (i, el) => el.getTotalLength ? Math.ceil(el.getTotalLength()) : 250 },
+                { strokeDashoffset: 0, duration: 1.15, stagger: 0.04, ease: "power2.out" },
+                "-=0.85"
+            )
+            // Spring bounce circuit terminal node pads
+            .fromTo(".circuit-node",
+                { scale: 0, opacity: 0 },
+                { scale: 1, opacity: 1, duration: 0.5, stagger: 0.03, ease: "back.out(2)" },
+                "-=0.65"
             )
             .fromTo(".hero-orbit-dot",
                 { scale: 0, opacity: 0 },

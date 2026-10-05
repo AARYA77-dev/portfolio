@@ -241,7 +241,6 @@ h1 span {
     background: rgba(56, 189, 248, 0.18);
 }
 
-/* Animations will-change */
 .animate-on-load .nav,
 .animate-on-load .hero,
 .animate-on-load .hero-avatar-showcase,
@@ -250,6 +249,11 @@ h1 span {
 .animate-on-load .hero-social-btn,
 .animate-on-load .hero-btn {
     will-change: transform, opacity;
+}
+
+.animate-on-load .ui-edge-circuits-container {
+    opacity: 0;
+    visibility: hidden;
 }
 
 .darkModeInput {
@@ -1025,32 +1029,57 @@ body.dark .hero-social-btn {
     text-decoration: none;
 }
 
+.hero-btn span {
+    color: inherit;
+}
+
 .primary-hero-btn {
     background: linear-gradient(135deg, #00f5ff 0%, #0284c7 100%);
     color: #040711;
-    box-shadow: 0 4px 18px rgba(0, 245, 255, 0.35);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
 }
 
 .primary-hero-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 26px rgba(0, 245, 255, 0.65);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.04);
 }
 
 .secondary-hero-btn {
     background: transparent;
-    border: 1.5px solid rgba(0, 245, 255, 0.45);
+    border: 1.5px solid rgba(0, 245, 255, 0.35);
     color: #0f172a;
 }
 
 body.dark .secondary-hero-btn {
     color: #ffffff;
+    border-color: rgba(0, 245, 255, 0.35);
 }
 
 .secondary-hero-btn:hover {
-    background: rgba(0, 245, 255, 0.12);
-    border-color: #00f5ff;
+    background: rgba(0, 245, 255, 0.08);
+    border-color: rgba(0, 245, 255, 0.65);
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(0, 245, 255, 0.25);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+body:not(.dark) .primary-hero-btn {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+body:not(.dark) .primary-hero-btn:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+body:not(.dark) .secondary-hero-btn {
+    border-color: rgba(2, 132, 199, 0.35);
+    color: #0284c7;
+}
+
+body:not(.dark) .secondary-hero-btn:hover {
+    background: rgba(2, 132, 199, 0.06);
+    border-color: #0284c7;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 /* --- HERO AVATAR SHOWCASE WITH ROTATING CONIC AURA --- */
@@ -1063,6 +1092,96 @@ body.dark .secondary-hero-btn {
     justify-content: center;
     flex-shrink: 0;
     z-index: 5;
+}
+
+/* --- UI VIEWPORT EDGE MICROCHIP CIRCUIT TRACES --- */
+.ui-edge-circuits-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.ui-edge-circuit {
+    position: absolute;
+    pointer-events: none;
+}
+
+.edge-top-right {
+    top: 0;
+    right: 0;
+    width: 480px;
+    max-width: 46vw;
+    height: auto;
+}
+
+.edge-top-left {
+    top: 0;
+    left: 0;
+    width: 320px;
+    max-width: 30vw;
+    height: auto;
+    opacity: 0.55;
+}
+
+.edge-bottom-left {
+    bottom: 0;
+    left: 0;
+    width: 350px;
+    max-width: 34vw;
+    height: auto;
+    opacity: 0.6;
+}
+
+.edge-bottom-right {
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    max-width: 28vw;
+    height: auto;
+    opacity: 0.45;
+}
+
+.ui-circuit-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+}
+
+.circuit-path {
+    stroke: #00f5ff;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.85;
+    filter: drop-shadow(0 0 6px rgba(0, 245, 255, 0.75));
+}
+
+body:not(.dark) .circuit-path {
+    stroke: #0284c7;
+    opacity: 0.9;
+    filter: drop-shadow(0 0 4px rgba(2, 132, 199, 0.45));
+}
+
+.circuit-node {
+    fill: #00f5ff;
+    filter: drop-shadow(0 0 8px rgba(0, 245, 255, 0.95));
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+body:not(.dark) .circuit-node {
+    fill: #0284c7;
+    filter: drop-shadow(0 0 6px rgba(2, 132, 199, 0.65));
+}
+
+.circuit-node.node-small {
+    opacity: 0.75;
 }
 
 .hero-conic-glow-ring {
@@ -1282,6 +1401,21 @@ body:not(.dark) .hero-conic-glow-ring::after {
     .hero-avatar-showcase {
         width: 290px;
         height: 290px;
+    }
+
+    .edge-top-right {
+        width: 300px;
+        max-width: 55vw;
+    }
+
+    .edge-bottom-left {
+        width: 200px;
+        max-width: 45vw;
+    }
+
+    .edge-top-left,
+    .edge-bottom-right {
+        display: none;
     }
 }
 
