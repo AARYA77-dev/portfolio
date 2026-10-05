@@ -18,7 +18,7 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <title>Tanya | PORTFOLIO</title>
+    <title> | PORTFOLIO</title>
     <script>if (sessionStorage.getItem("transition")) document.documentElement.classList.add("page-transitioning");</script>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/x-icon" href="aarya.webp" />
@@ -77,39 +77,23 @@
         <span class="tile"></span>
     </div>
     <!-- loader -->
-    <div class="loader">
-        <div class="overlay">
-            <div class="block"></div>
-            <div class="block"></div>
+    <div class="loader" id="site-loader">
+        <div class="loader-backdrop"></div>
+        <div class="loader-content">
+            <div class="loader-spinner-box">
+                <div class="loader-spinner-ring"></div>
+            </div>
+            <p class="loader-caption">Loading portfolio<span
+                    class="loader-dots"><span>.</span><span>.</span><span>.</span></span></p>
+            <div class="loader-pulse-dots" aria-hidden="true">
+                <span class="p-dot"></span>
+                <span class="p-dot"></span>
+                <span class="p-dot"></span>
+            </div>
         </div>
-        <div class="intro-logo">
-            <div class="word" id="word-1">
-                <h1><span>My</span></h1>
-            </div>
-            <div class="word" id="word-2">
-                <h1><span>Portfolio</span></h1>
-            </div>
-        </div>
-        <div class="divider"></div>
-        <div class="spinner-container">
-            <div class="spinner"></div>
-        </div>
-        <div class="counter">
-            <div class="count">
-                <div class="digit">
-                    <h1>3</h1>
-                </div>
-            </div>
-            <div class="count">
-                <div class="digit">
-                    <h1>2</h1>
-                </div>
-            </div>
-            <div class="count">
-                <div class="digit">
-                    <h1>1</h1>
-                </div>
-            </div>
+        <div class="loader-ambient" aria-hidden="true">
+            <div class="loader-orb orb-1"></div>
+            <div class="loader-orb orb-2"></div>
         </div>
     </div>
     <div class="progress-bar"></div>
@@ -119,10 +103,10 @@
             <div class="logo"><a href="/">AARYA</a></div>
             <div class="nav-right">
                 <div class="menu" id="navMenu">
-                    <a class="navlink" href="project.html">0.1 Projects = () =></a>
-                    <a class="navlink" href="#about" onclick="scrollToAbout()">0.2 About = () =></a>
-                    <a class="navlink" href="#skills" onclick="scrollToSkills()">0.3 My Skills = () =></a>
-                    <a class="navlink" href="contact.html">0.4 Contact = () =></a>
+                    <a class="navlink" href="project.html">Projects</a>
+                    <a class="navlink" href="#about" onclick="scrollToAbout()">About</a>
+                    <a class="navlink" href="#skills" onclick="scrollToSkills()">My Skills</a>
+                    <a class="navlink" href="contact.html">Contact</a>
                     <a href="https://docs.google.com/document/d/1TY298r-MzSnmakYuki44P1H-Vk1bLtRUUevDLhmkiDQ/edit?usp=sharing"
                         target="_blank" class="resume-btn">RESUME</a>
                 </div>
@@ -150,23 +134,65 @@
     <main>
         <section id="hero" class="hero">
             <div class="hero-left">
-                <h2 class="title">&lt;Full Stack Developer /&gt;</h2>
-                <div class="card hero-card">
-                    <h3>Hi, I'm Aarya</h3>
-                    <h2 class="second-title">Software Engineer</h2>
-                    <div class="animated-text">I make your apps<span></span></div>
+                <div class="hero-badge-tag">&lt;Data Analytics &amp; Web Development /&gt;</div>
+                <div class="hero-text-block">
+                    <h1 class="hero-greeting">Hey, I'm <span class="hero-name-gradient">h</span></h1>
+                    <h2 class="hero-role-title">Data Analyst <span class="role-separator" aria-hidden="true">|</span>
+                        <span class="role-highlight">Business Intelligence &amp; AI</span>
+                    </h2>
+                    <p class="hero-bio-desc">
+                        I can understand any code regardless of the language or tech stack, backed by a strong ability
+                        to trace logic and master code flow.
+                    </p>
+                </div>
+                <div class="hero-actions-container">
+                    <div class="hero-social-row">
+                        <a href="https://github.com/tanya459" target="_blank" rel="noopener noreferrer"
+                            class="hero-social-btn" aria-label="GitHub Profile">
+                            <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/tanya-sinha-0170742b3" target="_blank"
+                            rel="noopener noreferrer" class="hero-social-btn" aria-label="LinkedIn Profile">
+                            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                        <a href="mailto:tanyasinha1514@gmail.com" target="_blank" rel="noopener noreferrer"
+                            class="hero-social-btn" aria-label="Email Me">
+                            <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="hero-cta-buttons">
+                        <a href="https://docs.google.com/document/d/1TY298r-MzSnmakYuki44P1H-Vk1bLtRUUevDLhmkiDQ/edit?usp=sharing"
+                            target="_blank" class="hero-btn primary-hero-btn">
+                            <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+                            <span>View Resume</span>
+                        </a>
+                        <a href="contact.html" class="hero-btn secondary-hero-btn">
+                            <span>Get in Touch</span>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="image-ring">
-                <img src="aarya.webp" alt="Aarya" fetchpriority="high" loading="eager" decoding="async" width="350"
-                    height="350">
+            <div class="hero-avatar-showcase">
+                <div class="hero-conic-glow-ring" aria-hidden="true"></div>
+                <div class="hero-glass-rim" aria-hidden="true"></div>
+                <div class="hero-ambient-aura" aria-hidden="true"></div>
+                <div class="hero-avatar-circle">
+                    <img src="about.png" alt="Tanya Sinha" fetchpriority="high" loading="eager" decoding="async"
+                        width="400" height="400">
+                </div>
+                <div class="hero-orbit-dot dot-cyan" aria-hidden="true"></div>
+                <div class="hero-orbit-dot dot-blue" aria-hidden="true"></div>
+                <div class="hero-orbit-dot dot-purple" aria-hidden="true"></div>
+                <div class="hero-orbit-dot dot-pink" aria-hidden="true"></div>
+                <div class="hero-orbit-dot dot-amber" aria-hidden="true"></div>
             </div>
             <a href="#about" id="banner-arrow-link" class="banner-arrow-wrap" onclick="scrollToAbout(event)"
                 aria-label="Scroll down to About section">
                 <svg id="banner-arrow-svg" width="376" height="111" viewBox="0 0 376 111" fill="transparent"
                     xmlns="http://www.w3.org/2000/svg" class="banner-arrow-svg">
-                    <path class="svg-arrow svg-arrow-1" d="M1 1V39.9286L188 110V70.6822L1 1Z" stroke="#2C2C2C"></path>
-                    <path class="svg-arrow svg-arrow-2" d="M375 1V39.9286L188 110V70.6822L375 1Z" stroke="#2C2C2C">
+                    <path class="svg-arrow svg-arrow-1" d="M1 1V39.9286L188 110V70.6822L1 1Z" stroke="currentColor">
+                    </path>
+                    <path class="svg-arrow svg-arrow-2" d="M375 1V39.9286L188 110V70.6822L375 1Z" stroke="currentColor">
                     </path>
                 </svg>
             </a>
@@ -180,7 +206,7 @@
                     </div>
                     <div class="about-description">
                         <p>
-                            Hello! My name is <span class="shine-text">Aarya</span> and I’m a Full-Stack Developer
+                            Hello! My name is <span class="shine-text">Tanya</span> and I’m a Full-Stack Developer
                             located
                             in India. I have a serious passion for UI effects, animations, and creating intuitive,
                             dynamic
@@ -420,8 +446,8 @@
                         <span class="tech">JavaScript</span>
                     </div>
                     <div class="project-buttons">
-                        <a href="https://github.com/tanya459/AI-Finance-Advisor" class="btn-projects"
-                            target="_blank" aria-label="View the AI Finance Advisor GitHub repository">
+                        <a href="https://github.com/tanya459/AI-Finance-Advisor" class="btn-projects" target="_blank"
+                            aria-label="View the AI Finance Advisor GitHub repository">
                             <i class="fa-brands fa-github" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -529,136 +555,143 @@
 
     gsap.ticker.lagSmoothing(0);
 
+    const isReload = performance.getEntriesByType('navigation')[0]?.type === 'reload';
     const hasAnimated = sessionStorage.getItem("homeAnimated");
 
-    if (!hasAnimated) {
+    if (!hasAnimated || isReload) {
         lenis.stop();
-        runHomeAnimation(); // <-- COMMENT THIS LINE TO DISABLE LOADING SCREEN
+        runHomeAnimation();
         sessionStorage.setItem("homeAnimated", "true");
     } else {
         document.body.classList.remove("animate-on-load");
-        const loader = document.querySelector(".loader");
+        const loader = document.getElementById("site-loader");
         if (loader) loader.remove();
         lenis.start();
 
-        // Ensure hero section is visible and properly positioned
-        gsap.set(".hero", { y: 0, opacity: 1 });
-        gsap.set(".nav", { y: 0, opacity: 1 });
-        gsap.set(".title", { y: 0, opacity: 1 });
-        gsap.set(".image-ring", { scale: 1, opacity: 1 });
-        gsap.set(".banner-arrow-wrap", { y: 0, opacity: 1 });
+        // Ensure all elements are immediately visible when skipped
+        gsap.set(".hero, .nav, .title, .hero-avatar-showcase, .banner-arrow-wrap", { opacity: 1, y: 0, x: 0, scale: 1 });
+        gsap.set(".hero-social-btn, .hero-btn, .hero-orbit-dot, .hero-pill", { scale: 1, rotation: 0, opacity: 1 });
 
         titleAnimation();
         stackingAnimation();
     }
 
     function runHomeAnimation() {
-        gsap.registerPlugin(CustomEase);
         gsap.registerPlugin(ScrollTrigger);
 
-        CustomEase.create("hop", "0.22,1,0.36,1");
-
         const tl = gsap.timeline({
-            delay: 0.3,
-            defaults: { ease: "hop" },
+            defaults: { ease: "power3.out" },
             onComplete: () => {
                 document.body.classList.remove("animate-on-load");
                 lenis.start();
-            }
-        });
-
-        const counts = document.querySelectorAll(".count");
-
-        counts.forEach((count, index) => {
-            const digit = count.querySelectorAll(".digit h1");
-
-            tl.to(digit, {
-                y: "0%",
-                duration: 1,
-                stagger: 0.075
-            }, index);
-
-            if (index < counts.length) {
-                tl.to(digit, {
-                    y: "-100%",
-                    duration: 1,
-                    stagger: 0.075
-                }, index + 1);
-            }
-        });
-
-        tl.to(".spinner", { opacity: 0, duration: 0.3 });
-        tl.to(".word h1", { y: "0%", duration: 1 }, "<");
-        tl.to(".divider", {
-            scaleY: 1,
-            duration: 1,
-            onComplete: () =>
-                gsap.to(".divider", { opacity: 0, duration: 0.4 })
-        }, "<");
-
-        tl.to("#word-1 h1", {
-            y: "100%",
-            duration: 0.1,
-            delay: 0.3
-        });
-
-        tl.to("#word-2 h1", {
-            y: "-100%",
-            duration: 0.2,
-            delay: 0.3
-        });
-
-        tl.to(".block", {
-            clipPath: "polygon(0 0, 100% 0, 100% 0%, 0 0)",
-            stagger: 0.1
-        });
-
-        tl.to(".loader", {
-            opacity: 0,
-            duration: 0.6,
-            ease: "power2.out",
-            onComplete: () => {
-                const loader = document.querySelector(".loader");
-                loader.classList.add("hidden");
-                loader.remove();
                 titleAnimation();
                 stackingAnimation();
                 ScrollTrigger.refresh();
             }
         });
 
-        tl.to(".nav", {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            ease: "power2.out",
-            force3D: true
-        })
+        // 1. Cinematic Splash Preloader Sequence
+        tl.fromTo(".loader-name",
+            { opacity: 0, scale: 0.82, filter: "blur(8px)" },
+            { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.85, ease: "power3.out" }
+        )
+            .fromTo(".loader-spinner-box, .loader-caption, .loader-pulse-dots",
+                { opacity: 0, y: 16 },
+                { opacity: 1, y: 0, duration: 0.5, stagger: 0.1 },
+                "-=0.35"
+            )
+            // Brief pause to appreciate the brand loading screen
+            .to({}, { duration: 0.75 })
+            // Smoothly zoom and fade the splash screen away
+            .to(".loader", {
+                opacity: 0,
+                scale: 1.05,
+                duration: 0.65,
+                ease: "power2.inOut",
+                onComplete: () => {
+                    const loader = document.getElementById("site-loader");
+                    if (loader) loader.remove();
+                }
+            })
 
-            .to(".hero", {
-                y: 0,
-                opacity: 1,
-                duration: 1.2,
-                ease: "power3.out",
-                force3D: true
-            }, "-=0.6")
+            // 2. Choreographed Hero Opening Sequence
+            // Floating Navbar descends smoothly
+            .fromTo(".nav",
+                { y: -70, opacity: 0, scale: 0.95 },
+                { y: 0, opacity: 1, scale: 1, duration: 0.75, ease: "power3.out" },
+                "-=0.3"
+            )
+            .fromTo(".logo",
+                { x: -35, opacity: 0 },
+                { x: 0, opacity: 1, duration: 0.5 },
+                "-=0.55"
+            )
+            .fromTo(".navlink",
+                { y: -16, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.45, stagger: 0.05 },
+                "-=0.4"
+            )
+            .fromTo(".darkModeLabel, .resume-btn",
+                { scale: 0.75, opacity: 0 },
+                { scale: 1, opacity: 1, duration: 0.45, stagger: 0.06, ease: "back.out(1.5)" },
+                "-=0.3"
+            )
 
-            .to(".image-ring", {
-                scale: 1,
-                opacity: 1,
-                duration: 1.3,
-                ease: "power4.out",
-                transformOrigin: "center center",
-                force3D: true
-            }, "-=1")
+            // Hero Left: Badge Tag & Typography Entrance
+            .fromTo(".hero-badge-tag",
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.6 },
+                "-=0.4"
+            )
+            .fromTo(".hero-greeting",
+                { y: 45, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
+                "-=0.45"
+            )
+            .fromTo(".hero-name-gradient",
+                { scale: 0.88, opacity: 0 },
+                { scale: 1, opacity: 1, duration: 0.7, ease: "back.out(1.5)" },
+                "-=0.6"
+            )
+            .fromTo(".hero-role-title, .hero-bio-desc",
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.7, stagger: 0.12 },
+                "-=0.5"
+            )
+            .fromTo(".hero-pill",
+                { y: 25, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: "back.out(1.4)" },
+                "-=0.4"
+            )
+            // Rotating pop-in social links!
+            .fromTo(".hero-social-btn",
+                { scale: 0, rotation: -180, opacity: 0 },
+                { scale: 1, rotation: 0, opacity: 1, duration: 0.6, stagger: 0.08, ease: "back.out(1.8)" },
+                "-=0.35"
+            )
+            // Spring bounce CTA action buttons!
+            .fromTo(".hero-btn",
+                { scale: 0, opacity: 0 },
+                { scale: 1, opacity: 1, duration: 0.55, stagger: 0.1, ease: "back.out(1.6)" },
+                "-=0.35"
+            )
 
-            .to(".title", {
-                y: 0,
-                opacity: 1,
-                duration: 1,
-                ease: "power2.out",
-                force3D: true
-            }, "-=0.9")
+            // Hero Right: Avatar Showcase, Conic Glow Aura & Orbital Dots
+            .fromTo(".hero-avatar-showcase",
+                { x: 90, scale: 0.6, opacity: 0 },
+                { x: 0, scale: 1, opacity: 1, duration: 1.0, ease: "power3.out" },
+                "-=1.15"
+            )
+            .fromTo(".hero-orbit-dot",
+                { scale: 0, opacity: 0 },
+                { scale: 1, opacity: 1, duration: 0.7, stagger: 0.07, ease: "back.out(2.2)" },
+                "-=0.6"
+            )
+            .fromTo(".banner-arrow-wrap",
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 0.6, duration: 0.8 },
+                "-=0.4"
+            );
     }
     function titleAnimation() {
         gsap.registerPlugin(ScrollTrigger);
