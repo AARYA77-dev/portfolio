@@ -606,6 +606,7 @@
 
         // Ensure all elements are immediately visible when skipped
         gsap.set(".hero, .nav, .title, .hero-avatar-showcase, .banner-arrow-wrap", { opacity: 1, y: 0, x: 0, scale: 1 });
+        gsap.set(".hero-conic-glow-ring, .hero-glass-rim, .hero-ambient-aura, .hero-avatar-circle", { opacity: 1, scale: 1, x: 0, y: 0 });
         gsap.set(".hero-social-btn, .hero-btn, .hero-orbit-dot, .hero-pill", { scale: 1, rotation: 0, opacity: 1 });
         gsap.set(".ui-edge-circuits-container", { opacity: 1, visibility: "visible" });
         gsap.set(".circuit-path", { strokeDashoffset: 0 });
@@ -737,23 +738,31 @@
                 "-=0.35"
             )
 
-            // Hero Right: Avatar Showcase, Conic Glow Aura & Orbital Dots
-            .fromTo(".hero-avatar-showcase",
-                { x: 90, scale: 0.6, opacity: 0 },
-                { x: 0, scale: 1, opacity: 1, duration: 1.0, ease: "power3.out" },
+            // Hero Right: Avatar Showcase opens from center (First Ring, then Image)
+            .set(".hero-avatar-showcase", { x: 0, opacity: 1, scale: 1 })
+            // 1. Ring and Glow Aura expand outward from center
+            .fromTo(".hero-conic-glow-ring, .hero-glass-rim, .hero-ambient-aura",
+                { scale: 0, opacity: 0, transformOrigin: "center center" },
+                { scale: 1, opacity: 1, duration: 0.9, ease: "back.out(1.4)" },
                 "-=1.15"
+            )
+            // 2. Profile Image opens outward from center inside the ring
+            .fromTo(".hero-avatar-circle",
+                { scale: 0, opacity: 0, transformOrigin: "center center" },
+                { scale: 1, opacity: 1, duration: 0.8, ease: "back.out(1.5)" },
+                "-=0.55"
             )
             // Reveal edge circuits as hero opens
             .fromTo(".ui-edge-circuits-container",
                 { opacity: 0, visibility: "visible" },
                 { opacity: 1, duration: 0.5 },
-                "-=0.9"
+                "-=0.8"
             )
             // Animate microchip circuit paths drawing outward dynamically!
             .fromTo(".circuit-path",
                 { strokeDashoffset: (i, el) => el.getTotalLength ? Math.ceil(el.getTotalLength()) : 250 },
                 { strokeDashoffset: 0, duration: 1.15, stagger: 0.04, ease: "power2.out" },
-                "-=0.85"
+                "-=0.75"
             )
             // Spring bounce circuit terminal node pads
             .fromTo(".circuit-node",
@@ -761,9 +770,10 @@
                 { scale: 1, opacity: 1, duration: 0.5, stagger: 0.03, ease: "back.out(2)" },
                 "-=0.65"
             )
+            // 3. Orbital spark dots pop out around the ring
             .fromTo(".hero-orbit-dot",
-                { scale: 0, opacity: 0 },
-                { scale: 1, opacity: 1, duration: 0.7, stagger: 0.07, ease: "back.out(2.2)" },
+                { scale: 0, opacity: 0, transformOrigin: "center center" },
+                { scale: 1, opacity: 1, duration: 0.65, stagger: 0.07, ease: "back.out(2)" },
                 "-=0.6"
             )
             .fromTo(".banner-arrow-wrap",
