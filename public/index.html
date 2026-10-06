@@ -604,26 +604,24 @@
     const isReload = performance.getEntriesByType('navigation')[0]?.type === 'reload';
     const hasAnimated = sessionStorage.getItem("homeAnimated");
 
+    titleAnimation();
+    stackingAnimation();
+
     if (!hasAnimated || isReload) {
-        lenis.stop();
         runHomeAnimation();
         sessionStorage.setItem("homeAnimated", "true");
     } else {
         document.body.classList.remove("animate-on-load");
         const loader = document.getElementById("site-loader");
         if (loader) loader.remove();
-        lenis.start();
 
         // Ensure all elements are immediately visible when skipped
         gsap.set(".hero, .nav, .title, .hero-avatar-showcase, .banner-arrow-wrap", { opacity: 1, y: 0, x: 0, scale: 1 });
         gsap.set(".hero-conic-glow-ring, .hero-glass-rim, .hero-ambient-aura, .hero-avatar-circle", { opacity: 1, scale: 1, x: 0, y: 0 });
-        gsap.set(".hero-social-btn, .hero-btn, .hero-orbit-dot, .hero-pill", { scale: 1, rotation: 0, opacity: 1 });
+        gsap.set(".hero-social-btn, .hero-btn, .hero-orbit-dot", { scale: 1, rotation: 0, opacity: 1 });
         gsap.set(".ui-edge-circuits-container", { opacity: 1, visibility: "visible" });
         gsap.set(".circuit-path", { strokeDashoffset: 0 });
         gsap.set(".circuit-node", { scale: 1, opacity: 1 });
-
-        titleAnimation();
-        stackingAnimation();
     }
 
     function runHomeAnimation() {
@@ -641,9 +639,6 @@
             defaults: { ease: "power3.out" },
             onComplete: () => {
                 document.body.classList.remove("animate-on-load");
-                lenis.start();
-                titleAnimation();
-                stackingAnimation();
                 ScrollTrigger.refresh();
 
                 // Ambient breathing pulse on terminal connection nodes
@@ -663,17 +658,11 @@
         });
 
         // 1. Cinematic Splash Preloader Sequence
-        tl.fromTo(".loader-name",
-            { opacity: 0, scale: 0.82, filter: "blur(8px)" },
-            { opacity: 1, scale: 1, filter: "blur(0px)", duration: 0.85, ease: "power3.out" }
+        tl.fromTo(".loader-spinner-box, .loader-caption, .loader-pulse-dots",
+            { opacity: 0, y: 16 },
+            { opacity: 1, y: 0, duration: 0.5, stagger: 0.1 }
         )
-            .fromTo(".loader-spinner-box, .loader-caption, .loader-pulse-dots",
-                { opacity: 0, y: 16 },
-                { opacity: 1, y: 0, duration: 0.5, stagger: 0.1 },
-                "-=0.35"
-            )
-            // Brief pause to appreciate the brand loading screen
-            .to({}, { duration: 0.75 })
+            .to({}, { duration: 0.5 })
             // Smoothly zoom and fade the splash screen away
             .to(".loader", {
                 opacity: 0,
@@ -683,6 +672,7 @@
                 onComplete: () => {
                     const loader = document.getElementById("site-loader");
                     if (loader) loader.remove();
+                    document.body.classList.remove("animate-on-load");
                 }
             })
 
@@ -729,11 +719,6 @@
                 { y: 30, opacity: 0 },
                 { y: 0, opacity: 1, duration: 0.7, stagger: 0.12 },
                 "-=0.5"
-            )
-            .fromTo(".hero-pill",
-                { y: 25, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.6, stagger: 0.1, ease: "back.out(1.4)" },
-                "-=0.4"
             )
             // Rotating pop-in social links!
             .fromTo(".hero-social-btn",
