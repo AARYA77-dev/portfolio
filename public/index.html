@@ -80,34 +80,31 @@
     <div class="loader" id="site-loader" aria-hidden="false">
         <div class="loader-bg-wrap">
             <div class="loader-bg-grid"></div>
-            <svg class="loader-bg-contours" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M-100 200 C300 120, 600 280, 1000 180 C1250 120, 1400 250, 1600 200" stroke="rgba(0, 245, 255, 0.08)" stroke-width="1.5" />
-                <path d="M-100 350 C250 280, 550 420, 950 320 C1200 250, 1420 400, 1600 340" stroke="rgba(0, 245, 255, 0.06)" stroke-width="1.5" />
-                <path d="M-100 500 C200 450, 600 580, 920 480 C1180 400, 1450 560, 1600 500" stroke="rgba(0, 245, 255, 0.05)" stroke-width="1.5" />
-                <path d="M-100 650 C320 600, 680 720, 1050 620 C1300 540, 1480 680, 1600 640" stroke="rgba(0, 245, 255, 0.04)" stroke-width="1.5" />
+            <svg class="loader-bg-contours" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <path d="M-100 200 C300 120, 600 280, 1000 180 C1250 120, 1400 250, 1600 200"
+                    stroke="rgba(0, 245, 255, 0.08)" stroke-width="1.5" />
+                <path d="M-100 350 C250 280, 550 420, 950 320 C1200 250, 1420 400, 1600 340"
+                    stroke="rgba(0, 245, 255, 0.06)" stroke-width="1.5" />
+                <path d="M-100 500 C200 450, 600 580, 920 480 C1180 400, 1450 560, 1600 500"
+                    stroke="rgba(0, 245, 255, 0.05)" stroke-width="1.5" />
+                <path d="M-100 650 C320 600, 680 720, 1050 620 C1300 540, 1480 680, 1600 640"
+                    stroke="rgba(0, 245, 255, 0.04)" stroke-width="1.5" />
             </svg>
             <div class="loader-ambient-glow"></div>
         </div>
         <div class="loader-container">
             <div class="loader-center">
-                <div class="loader-brand-mark">
-                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <polygon points="24,4 44,24 24,44 4,24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <polygon points="24,12 36,24 24,36 12,24" stroke="rgba(0, 245, 255, 0.5)" stroke-width="1.5" stroke-dasharray="2 3"/>
-                        <circle cx="24" cy="24" r="3.5" fill="currentColor"/>
-                    </svg>
-                </div>
                 <div class="loader-title-wrap">
-                    <span class="loader-title">AARYA</span>
-                    <span class="loader-tag">&lt;PORTFOLIO // 2026&gt;</span>
+                    <span class="loader-title">&lt;MY PORTFOLIO&gt;</span>
                 </div>
-                <div class="loader-progress-wrap">
-                    <div class="loader-counter-row">
-                        <span class="loader-status-text">INITIALIZING SYSTEM</span>
-                        <span class="loader-counter-display"><span class="loader-number">0</span><span class="loader-unit">%</span></span>
-                    </div>
-                    <div class="loader-progress-track">
-                        <div class="loader-progress-fill"></div>
+                <div class="loader-circle-wrap">
+                    <svg class="loader-circle-svg" viewBox="0 0 100 100" aria-hidden="true">
+                        <circle class="loader-circle-track" cx="50" cy="50" r="42" />
+                        <circle class="loader-circle-bar" cx="50" cy="50" r="42" />
+                    </svg>
+                    <div class="loader-circle-content">
+                        <span class="loader-number">0</span><span class="loader-unit">%</span>
                     </div>
                 </div>
             </div>
@@ -681,85 +678,83 @@
         // 1. Abatable-style Curtain Preloader Sequence
         const counterObj = { value: 0 };
         const counterEl = document.querySelector(".loader-number");
-        const progressFill = document.querySelector(".loader-progress-fill");
-        const statusEl = document.querySelector(".loader-status-text");
+        const circleBar = document.querySelector(".loader-circle-bar");
+        const circumference = 2 * Math.PI * 42;
+
+        function updateProgress() {
+            const val = Math.round(counterObj.value);
+            if (counterEl) counterEl.textContent = val;
+            if (circleBar) {
+                const offset = circumference - (circumference * (val / 100));
+                circleBar.style.strokeDashoffset = offset;
+            }
+        }
 
         tl.set("#site-loader", {
             clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
             visibility: "visible"
         })
-        .fromTo(".loader-bg-wrap",
-            { scale: 1.14 },
-            { scale: 1.0, duration: 2.2, ease: "linear" },
-            0
-        )
-        // Center brand mark and typography clip-path wipe in from bottom
-        .fromTo(".loader-center",
-            {
-                clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-                y: 35,
-                opacity: 0
-            },
-            {
-                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-                y: 0,
-                opacity: 1,
-                duration: 0.9,
-                ease: "power3.out"
-            },
-            0.1
-        )
-        // Digital counter tick (0 -> 100%) & Progress bar fill
-        .to(counterObj, {
-            value: 100,
-            duration: 1.25,
-            ease: "power2.inOut",
-            onUpdate: () => {
-                const val = Math.round(counterObj.value);
-                if (counterEl) counterEl.textContent = val;
-                if (progressFill) progressFill.style.transform = `scaleX(${val / 100})`;
-                if (statusEl) {
-                    if (val < 40) statusEl.textContent = "INITIALIZING SYSTEM";
-                    else if (val < 85) statusEl.textContent = "LOADING DATA ASSETS";
-                    else statusEl.textContent = "SYSTEM READY";
+            .fromTo(".loader-bg-wrap",
+                { scale: 1.14 },
+                { scale: 1.0, duration: 2.2, ease: "linear" },
+                0
+            )
+            // Center title and circle clip-path wipe in from bottom
+            .fromTo(".loader-center",
+                {
+                    clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
+                    y: 35,
+                    opacity: 0
+                },
+                {
+                    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.9,
+                    ease: "power3.out"
+                },
+                0.1
+            )
+            // Continuous loading: never stops; smoothly decelerates for a fraction of a second in the middle, then resumes original speed
+            .to(counterObj, {
+                value: 100,
+                duration: 1.6,
+                ease: (t) => t + (0.65 / (2 * Math.PI)) * Math.sin(2 * Math.PI * t),
+                onUpdate: updateProgress
+            }, 0.1)
+            // Center text wipes upward into mask (Abatable signature)
+            .to(".loader-center", {
+                clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+                y: -25,
+                opacity: 0,
+                duration: 0.6,
+                ease: "power3.in"
+            })
+            // The signature Abatable Curtain Exit: Entire screen wipes upward
+            .to("#site-loader", {
+                clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+                duration: 1.25,
+                ease: "power4.inOut",
+                onComplete: () => {
+                    const loader = document.getElementById("site-loader");
+                    if (loader) loader.remove();
+                    document.body.classList.remove("animate-on-load");
+                    if (typeof ScrollTrigger !== "undefined") ScrollTrigger.refresh();
                 }
-            }
-        }, 0.2)
-        // Brief hold at 100%
-        .to({}, { duration: 0.2 })
-        // Center text wipes upward into mask (Abatable signature)
-        .to(".loader-center", {
-            clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-            y: -25,
-            opacity: 0,
-            duration: 0.6,
-            ease: "power3.in"
-        })
-        // The signature Abatable Curtain Exit: Entire screen wipes upward
-        .to("#site-loader", {
-            clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-            duration: 1.25,
-            ease: "power4.inOut",
-            onComplete: () => {
-                const loader = document.getElementById("site-loader");
-                if (loader) loader.remove();
-                document.body.classList.remove("animate-on-load");
-                if (typeof ScrollTrigger !== "undefined") ScrollTrigger.refresh();
-            }
-        }, "-=0.15")
+            }, "-=0.15")
 
-        // 2. Choreographed Hero Opening Sequence (Starts simultaneously as curtain peels up)
-        .fromTo("#hero",
-            { scale: 1.08 },
-            { scale: 1, duration: 1.6, ease: "expo.out" },
-            "-=1.15"
-        )
-        // Floating Navbar descends smoothly
-        .fromTo(".nav",
-            { y: -70, opacity: 0, scale: 0.95 },
-            { y: 0, opacity: 1, scale: 1, duration: 0.85, ease: "expo.out" },
-            "-=1.0"
-        )
+            // 2. Choreographed Hero Opening Sequence (Starts simultaneously as curtain peels up)
+            .fromTo("#hero",
+                { scale: 1.08 },
+                { scale: 1, duration: 1.6, ease: "expo.out" },
+                "-=1.15"
+            )
+            // Floating Navbar descends smoothly
+            .fromTo(".nav",
+                { y: -70, opacity: 0, scale: 0.95 },
+                { y: 0, opacity: 1, scale: 1, duration: 0.85, ease: "expo.out" },
+                "-=1.0"
+            )
             .fromTo(".logo",
                 { x: -35, opacity: 0 },
                 { x: 0, opacity: 1, duration: 0.5 },
