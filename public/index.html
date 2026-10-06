@@ -841,66 +841,6 @@
     function stackingAnimation() {
         gsap.registerPlugin(ScrollTrigger);
 
-        const cards = document.querySelectorAll(".stacking-card");
-
-
-        // Unified Hero Scroll Out Animation
-        gsap.timeline({
-            scrollTrigger: {
-                trigger: "#hero",
-                start: "top top",
-                end: "bottom top",
-                scrub: 0.5,
-                fastScrollEnd: true,
-                pinSpacing: false,
-                invalidateOnRefresh: true,
-            }
-        })
-            .to("#hero", {
-                scale: 0.75,
-                opacity: 0,
-                ease: "none",
-                force3D: true
-            }, 0)
-            .to(".image-ring", {
-                scale: 0.2,
-                opacity: 0,
-                ease: "none",
-                force3D: true
-            }, 0)
-            .to(".banner-arrow-wrap", {
-                opacity: 0,
-                y: 40,
-                ease: "none",
-                force3D: true
-            }, 0);
-
-        cards.forEach((card, index) => {
-            gsap.fromTo(
-                card,
-                {
-                    scale: 0.9,
-                    opacity: 0,
-                    y: 100
-                },
-                {
-                    scale: 1,
-                    opacity: 1,
-                    y: 0,
-                    duration: 1,
-                    ease: "power2.out",
-                    scrollTrigger: {
-                        trigger: card,
-                        start: "top 90%",
-                        end: "top 60%",
-                        scrub: 0.5,
-                        fastScrollEnd: true,
-                        scroller: document.body,
-                    }
-                }
-            );
-        });
-
 
         gsap.utils.toArray(".featured-card-home").forEach((image) => {
             gsap.to(image.querySelector("img"), {
