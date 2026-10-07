@@ -2982,6 +2982,7 @@ body:not(.dark) .input-group label {
 
 .input-group label .req {
     color: #f43f5e;
+    font-size: 30px;
 }
 
 /* Input & Textarea Elements */

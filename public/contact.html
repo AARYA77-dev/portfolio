@@ -287,24 +287,6 @@
     </footer>
 
     <script>
-        // Copy Email to Clipboard
-        const copyEmailBtn = document.getElementById("copyEmailBtn");
-        if (copyEmailBtn) {
-            copyEmailBtn.addEventListener("click", async () => {
-                const email = "tanyasinha1514@gmail.com";
-                try {
-                    await navigator.clipboard.writeText(email);
-                    copyEmailBtn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
-                    toastr.success("Email copied to clipboard!");
-                    setTimeout(() => {
-                        copyEmailBtn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
-                    }, 2400);
-                } catch (err) {
-                    toastr.info(email);
-                }
-            });
-        }
-
         // Topic Chip Interaction
         const topicChips = document.querySelectorAll(".topic-chip");
         const topicInput = document.getElementById("selectedTopic");
