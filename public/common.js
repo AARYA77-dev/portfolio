@@ -11,7 +11,7 @@
     function getThemeOriginPoint() {
         const img = document.querySelector(".image-ring img") ||
             document.querySelector(".image-ring") ||
-            document.querySelector("img[src*='aarya']");
+            document.querySelector("img[src*='tanya']");
 
         if (img) {
             const rect = img.getBoundingClientRect();
