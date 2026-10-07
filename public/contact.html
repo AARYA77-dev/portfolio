@@ -201,73 +201,70 @@
                 </p>
             </div>
 
-            <!-- Contact Form Deck -->
-            <div class="contact-deck">
-                <!-- Cyberpunk Form Card -->
-                <div class="contact-card">
-                    <h2 class="contact-form-title">Send a Message</h2>
-                    <p class="contact-info-desc" style="margin-bottom: 18px;">
-                        Select a topic below, describe your requirements, and send your transmission directly.
+            <!-- Cyberpunk Form Card -->
+            <div class="contact-card">
+                <h2 class="contact-form-title">Send a Message</h2>
+                <p class="contact-info-desc">
+                    Describe your requirements and send your message directly.
+                </p>
+
+                <!-- Contact Form -->
+                <form id="contactForm">
+                    <input type="hidden" name="topic" id="selectedTopic" value="Data Analytics & BI">
+
+                    <div class="input-group">
+                        <label for="userName">
+                            <i class="fa-regular fa-user"></i> Your Name <span class="req">*</span>
+                        </label>
+                        <input name="name" autocomplete="name" type="text" id="userName"
+                            placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="userEmail">
+                            <i class="fa-regular fa-envelope"></i> Email Address <span class="req">*</span>
+                        </label>
+                        <input name="email" autocomplete="email" type="email" id="userEmail"
+                            placeholder="your.email@example.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="userMessage">
+                            <i class="fa-regular fa-comment-dots"></i> Your Message <span class="req">*</span>
+                        </label>
+                        <textarea name="message" id="userMessage" rows="5"
+                            placeholder="Tell me about your project, goals, or inquiry..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="contact-btn contact-submit-btn" id="submitBtn">
+                        <span class="btn-text">Send Message</span>
+                        <i class="fa-solid fa-paper-plane btn-icon"></i>
+                    </button>
+
+                    <p class="contact-note">
+                        Prefer direct email?
+                        <a href="mailto:tanyasinha1514@gmail.com">tanyasinha1514@gmail.com</a>
                     </p>
 
-                    <!-- Contact Form -->
-                    <form id="contactForm">
-                        <input type="hidden" name="topic" id="selectedTopic" value="Data Analytics & BI">
-
-                        <div class="input-group">
-                            <label for="userName">
-                                <i class="fa-regular fa-user"></i> Your Name <span class="req">*</span>
-                            </label>
-                            <input name="name" autocomplete="name" type="text" id="userName"
-                                placeholder="Enter your full name" required>
+                    <div class="cyber-divider"></div>
+                    <div class="contact-social-section">
+                        <div class="contact-social-pills">
+                            <a href="https://www.linkedin.com/in/tanya-sinha-0170742b3" target="_blank"
+                                rel="noopener noreferrer" class="contact-social-pill"
+                                aria-label="Visit my LinkedIn profile">
+                                <i class="fa-brands fa-linkedin"></i> <span>LinkedIn</span>
+                            </a>
+                            <a href="https://github.com/tanya459" target="_blank" rel="noopener noreferrer"
+                                class="contact-social-pill" aria-label="Visit my GitHub profile">
+                                <i class="fa-brands fa-github"></i> <span>GitHub</span>
+                            </a>
+                            <a href="mailto:tanyasinha1514@gmail.com" class="contact-social-pill"
+                                aria-label="Send me an email">
+                                <i class="fa-regular fa-envelope"></i> <span>Email</span>
+                            </a>
                         </div>
-
-                        <div class="input-group">
-                            <label for="userEmail">
-                                <i class="fa-regular fa-envelope"></i> Email Address <span class="req">*</span>
-                            </label>
-                            <input name="email" autocomplete="email" type="email" id="userEmail"
-                                placeholder="your.email@example.com" required>
-                        </div>
-
-                        <div class="input-group">
-                            <label for="userMessage">
-                                <i class="fa-regular fa-comment-dots"></i> Your Message <span class="req">*</span>
-                            </label>
-                            <textarea name="message" id="userMessage" rows="5"
-                                placeholder="Tell me about your project, goals, or inquiry..." required></textarea>
-                        </div>
-
-                        <button type="submit" class="contact-btn contact-submit-btn" id="submitBtn">
-                            <span class="btn-text">Send Message</span>
-                            <i class="fa-solid fa-paper-plane btn-icon"></i>
-                        </button>
-
-                        <p class="contact-note">
-                            Prefer direct email?
-                            <a href="mailto:tanyasinha1514@gmail.com">tanyasinha1514@gmail.com</a>
-                        </p>
-
-                        <div class="cyber-divider"></div>
-                        <div class="contact-social-section">
-                            <div class="contact-social-pills" style="justify-content: center;">
-                                <a href="https://www.linkedin.com/in/tanya-sinha-0170742b3" target="_blank"
-                                    rel="noopener noreferrer" class="contact-social-pill"
-                                    aria-label="Visit my LinkedIn profile">
-                                    <i class="fa-brands fa-linkedin"></i> <span>LinkedIn</span>
-                                </a>
-                                <a href="https://github.com/tanya459" target="_blank" rel="noopener noreferrer"
-                                    class="contact-social-pill" aria-label="Visit my GitHub profile">
-                                    <i class="fa-brands fa-github"></i> <span>GitHub</span>
-                                </a>
-                                <a href="mailto:tanyasinha1514@gmail.com" class="contact-social-pill"
-                                    aria-label="Send me an email">
-                                    <i class="fa-regular fa-envelope"></i> <span>Email</span>
-                                </a>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
             </div>
         </div>
     </main>
@@ -287,17 +284,6 @@
     </footer>
 
     <script>
-        // Topic Chip Interaction
-        const topicChips = document.querySelectorAll(".topic-chip");
-        const topicInput = document.getElementById("selectedTopic");
-        topicChips.forEach(chip => {
-            chip.addEventListener("click", () => {
-                topicChips.forEach(c => c.classList.remove("active"));
-                chip.classList.add("active");
-                if (topicInput) topicInput.value = chip.dataset.topic;
-            });
-        });
-
         // GSAP Stagger Entrance & Microchip Circuit Drawing
         if (typeof gsap !== "undefined") {
             const circuitPaths = document.querySelectorAll(".circuit-path");
@@ -387,9 +373,6 @@
 
                     toastr.success("Transmission received! Thank you, I'll be in touch soon.");
                     form.reset();
-                    // Reset topic chip to default
-                    const defaultChip = document.querySelector(".topic-chip");
-                    if (defaultChip) defaultChip.click();
                 } catch (error) {
                     console.error("Firebase submit error:", error);
                     toastr.error("Could not transmit message. Please send an email directly to tanyasinha1514@gmail.com.");

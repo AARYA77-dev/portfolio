@@ -2851,12 +2851,6 @@ body:not(.dark) .copyright-made {
     margin-bottom: 12px;
 }
 
-.contact-deck {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
 .contact-form-title {
     font-size: clamp(1.35rem, 2vw, 1.75rem);
     font-weight: 700;
@@ -2874,7 +2868,7 @@ body:not(.dark) .contact-form-title {
     color: #94a3b8;
     font-size: 0.93rem;
     line-height: 1.6;
-    margin-bottom: 24px;
+    margin-bottom: 18px;
 }
 
 body:not(.dark) .contact-info-desc {
@@ -2900,6 +2894,7 @@ body:not(.dark) .cyber-divider {
 .contact-social-pills {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
     margin-top: 6px;
 }
