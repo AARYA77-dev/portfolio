@@ -21,6 +21,11 @@
     -webkit-font-smoothing: antialiased;
 }
 
+/* =========================================================
+   Global design tokens and theme variables
+   These colors and radius values are reused throughout the site
+   so the layout stays consistent in both light and dark mode.
+   ========================================================= */
 :root {
     --primary-blue: #00f5ff;
     --light-blue: #38bdf8;
@@ -46,6 +51,11 @@
     --line-light: rgba(0, 229, 255, 0.22);
 }
 
+/* =========================================================
+   Base page styling
+   Controls the global background, typography, spacing, and core
+   page shell that wraps every portfolio page.
+   ========================================================= */
 body {
     background:
         radial-gradient(circle at top left, rgba(96, 165, 250, 0.22), transparent 34%),
@@ -67,7 +77,10 @@ body.animate-on-load {
     overflow: hidden !important;
 }
 
-/* Scroll-Triggered Text Animation Classes */
+/* =========================================================
+   Utility animations
+   These classes trigger reveal animations when content enters view.
+   ========================================================= */
 .animate-on-scroll {
     opacity: 0;
     transform: translateY(40px);
@@ -126,11 +139,11 @@ h1 span {
 }
 
 
-/* --- MODERN CINEMATIC SPLASH LOADER --- */
-
-/* ==========================================================================
-   Abatable-Style Curtain Preloader
-   ========================================================================== */
+/* =========================================================
+   Loader / splash screen
+   This creates the cinematic intro overlay that appears while the
+   portfolio loads its first view.
+   ========================================================= */
 .loader {
     position: fixed;
     top: 0;
@@ -336,8 +349,10 @@ h1 span {
     box-shadow: 0 0 10px rgba(2, 132, 199, 0.3);
 }
 
-/* CIRCLE */
-
+/* =========================================================
+   Theme switch toggle visuals
+   The circle handles the slider thumb for the dark/light mode switch.
+   ========================================================= */
 .circle {
     width: 24px;
     height: 24px;
@@ -363,8 +378,10 @@ h1 span {
     view-transition-name: theme-toggle-circle;
 }
 
-/* CSS Styling & Scroll Animation */
-
+/* =========================================================
+   Reading progress bar
+   Shows the page scroll progress near the top of the viewport.
+   ========================================================= */
 .progress-bar {
     position: fixed;
     top: 0;
@@ -394,8 +411,10 @@ h1 span {
 }
 
 
-/* ICONS - ALWAYS CENTERED */
-
+/* =========================================================
+   Theme toggle icon alignment
+   Keeps the sun and moon icons centered inside the switch.
+   ========================================================= */
 .darkModeLabel svg {
     width: 14px;
     height: 14px;
@@ -407,8 +426,10 @@ h1 span {
     pointer-events: none;
 }
 
-/* LIGHT MODE */
-
+/* =========================================================
+   Light mode toggle styling
+   Default icon states for light theme presentation.
+   ========================================================= */
 .sun {
     color: #f59e0b;
     opacity: 1;
@@ -419,8 +440,10 @@ h1 span {
     opacity: 0;
 }
 
-/* PRESS EFFECT */
-
+/* =========================================================
+   Theme toggle press effect
+   Slightly scales the toggle thumb to create a tactile feedback feel.
+   ========================================================= */
 label:active .circle {
     transform: translateY(-50%) scale(1.05);
 }
@@ -429,8 +452,10 @@ body.dark label:active .circle {
     transform: translateY(-50%) translateX(28px) scale(1.05);
 }
 
-/* DARK MODE */
-
+/* =========================================================
+   Dark mode theme overrides
+   Applies the dark visual palette across the portfolio.
+   ========================================================= */
 body.dark {
     background:
         radial-gradient(ellipse at 85% 20%, rgba(0, 180, 255, 0.14), transparent 50%),
@@ -618,8 +643,11 @@ body:not(.dark) .project-icon {
 }
 
 
-/* navbar section */
-
+/* =========================================================
+   Navigation / header bar
+   Controls the sticky top navigation, hover highlight effects,
+   logo styling, responsive menu, and resume button.
+   ========================================================= */
 .nav,
 .nav a,
 .navlink,
@@ -1003,6 +1031,10 @@ body:not(.dark) .resume-btn:hover {
 }
 
 
+/* =========================================================
+   About section
+   Layout and presentation styles for the introduction / profile summary.
+   ========================================================= */
 #about {
     scroll-margin-top: calc(62px + 20px);
 }
@@ -1630,7 +1662,10 @@ body.dark .banner-arrow-wrap:hover .svg-arrow {
 }
 
 
-/* title */
+/* =========================================================
+   Shared section heading styles
+   These titles are used across the portfolio pages.
+   ========================================================= */
 .title {
     font-family: monospace;
     font-size: clamp(20px, 5vw, 42px);
@@ -1644,8 +1679,10 @@ body.dark .title {
 }
 
 
-/* card */
-
+/* =========================================================
+   Reusable card surface styles
+   Utility card styling for grouped content blocks.
+   ========================================================= */
 nav,
 .hero {
     position: relative;
@@ -1671,10 +1708,11 @@ nav,
 
 
 
-/* --- SKILLS SECTION --- */
-
-
-
+/* =========================================================
+   Skills section
+   Handles the skill cards, hex-grid showcase, and the visual
+   technology panel used to present capabilities.
+   ========================================================= */
 .skills-section {
     padding: 80px 20px;
     display: flex;
@@ -2129,8 +2167,11 @@ body:not(.dark) .hex-prism-cap {
     }
 }
 
-/* project section */
-
+/* =========================================================
+   Projects content styling
+   This section defines the typography and layout for project titles,
+   feature cards, badges, and related metadata.
+   ========================================================= */
 .project-title {
     font-size: 26px;
     letter-spacing: 4px;
@@ -2453,7 +2494,10 @@ body:not(.dark) .project-card {
 }
 
 
-/* ABOUT */
+/* =========================================================
+   About text accent styling
+   Creates a glowing highlight effect for special inline text.
+   ========================================================= */
 .shine-text {
     color: #00f5ff;
     cursor: pointer;
@@ -2821,6 +2865,10 @@ body:not(.dark) .copyright-made {
     transform: scale(0.96);
 }
 
+/* =========================================================
+   Contact page
+   Styles the contact hero area and form card used for inquiries.
+   ========================================================= */
 .contact-page-container {
     max-width: 1140px;
     margin: 15px auto 50px auto;
@@ -3085,8 +3133,10 @@ body:not(.dark) .contact-note a {
 }
 
 
-/* toast */
-
+/* =========================================================
+   Toast notifications
+   These styles give success and error feedback after form submissions.
+   ========================================================= */
 #toast-container>.toast {
     background: rgba(15, 23, 42, 0.96);
     border: 1px solid rgba(96, 165, 250, 0.28);

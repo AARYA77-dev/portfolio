@@ -1,7 +1,12 @@
+// =============================================================
+// Page transition effects
+// This file creates the cinematic slide-in/out animation between pages.
+// It helps the portfolio feel more polished and app-like while navigating.
+// =============================================================
 (() => {
     const tiles = ".from-left .tile";
 
-    // 1. Enter: reveal page by sliding tiles out to the right
+    // 1. Enter: reveal the page by sliding the transition tiles to the right.
     if (sessionStorage.getItem("transition")) {
         sessionStorage.removeItem("transition");
         document.documentElement.classList.remove("page-transitioning");
@@ -18,7 +23,7 @@
         );
     }
 
-    // 2. Exit: slide tiles in from the left on internal link click
+    // 2. Exit: slide the transition tiles from the left when a user clicks an internal link.
     document.addEventListener("click", (e) => {
         const link = e.target.closest("a");
         if (!link || link.target === "_blank" || e.metaKey || e.ctrlKey || e.shiftKey) return;
@@ -47,12 +52,13 @@
         });
     });
 
-    // Reset tiles if restored from browser back/forward cache
+    // Reset tiles if the browser restores a page from the back/forward cache.
     window.addEventListener("pageshow", (e) => {
         if (e.persisted) gsap.set(tiles, { width: "0%", left: "0%" });
     });
 
-    // 3. Ultra-smooth Sliding Navbar Pill (eliminates gap drops & missed frames)
+    // 3. Ultra-smooth sliding navbar pill
+    // Tracks the active nav item and creates a smooth hover highlight animation.
     function setupNavHoverIndicator() {
         const nav = document.querySelector(".nav");
         if (!nav) return;

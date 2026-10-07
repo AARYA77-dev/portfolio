@@ -1,13 +1,22 @@
+// =============================================================
+// Shared site utilities
+// This script handles footer data, theme switching, sticky nav,
+// and mobile menu behavior across the portfolio pages.
+// =============================================================
 (() => {
     'use strict';
 
+    // Footer year is updated automatically so the copyright stays current.
     const copyrightYear = document.getElementById("copyright-year");
     if (copyrightYear) copyrightYear.textContent = new Date().getFullYear();
 
     // Theme Toggle Functionality
+    // Keeps the user's selected theme stored locally so it persists on reload.
     const THEME_KEY = "theme";
     const toggle = document.getElementById("toggle");
 
+    // Theme ripple effect: calculates the animation origin based on the profile image
+    // or the theme toggle so the dark/light transition feels centered and polished.
     function getThemeOriginPoint() {
         const img = document.querySelector(".image-ring img") ||
             document.querySelector(".image-ring") ||
@@ -36,12 +45,14 @@
         };
     }
 
+    // Apply the selected theme to the page and sync the checkbox state.
     function applyTheme(theme) {
         const isDark = theme === "dark";
         document.body.classList.toggle("dark", isDark);
         if (toggle) toggle.checked = isDark;
     }
 
+    // Smooth transition animation: adds a ripple-style reveal when the theme changes.
     function switchThemeWithRipple(theme) {
         if (document.documentElement.classList.contains("theme-transitioning")) return;
 
@@ -115,7 +126,7 @@
         }
     }
 
-    // Initialize theme
+    // Initialize theme on first page load using the saved preference from localStorage.
     const savedTheme = localStorage.getItem(THEME_KEY) || "dark";
     applyTheme(savedTheme);
 
@@ -139,6 +150,7 @@
     }
 
     // Dynamic Sticky Navbar Scroll Morph powered by GSAP
+    // Shrinks and smooths the header as the user scrolls to create a premium glass-morphism effect.
     const header = document.querySelector("header");
     const nav = document.querySelector(".nav");
     if (nav) {
@@ -216,6 +228,7 @@
     }
 
     // Mobile Hamburger Menu Setup
+    // Handles the responsive nav menu for smaller screens and adds open/close animation behavior.
     function initMobileNav() {
         const nav = document.querySelector(".nav");
         const menuToggle = document.querySelector(".menu-toggle");

@@ -1,7 +1,11 @@
+// =============================================================
+// Scroll reveal animations
+// These animations make text and cards fade/slide into view as the user scrolls.
+// =============================================================
 (() => {
     'use strict';
 
-    // Initialize scroll-triggered animations
+    // Initializes scroll-triggered reveal animations for portfolio content sections.
     function initScrollAnimations() {
         // Select all elements to animate
         const animatedElements = document.querySelectorAll(
