@@ -2074,10 +2074,6 @@ body:not(.dark) .hex-prism-cap {
         gap: 14px;
     }
 
-    .skills-area-title {
-        font-size: 26px;
-    }
-
     .skills-subtitle {
         font-size: 14px;
         margin-bottom: 34px;
@@ -2889,12 +2885,6 @@ body:not(.dark) .contact-info-desc {
 
 body:not(.dark) .cyber-divider {
     background: linear-gradient(90deg, transparent, rgba(2, 132, 199, 0.25), transparent);
-}
-
-.contact-social-section {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
 }
 
 .contact-social-pills {

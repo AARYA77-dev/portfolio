@@ -245,22 +245,20 @@
                     </p>
 
                     <div class="cyber-divider"></div>
-                    <div class="contact-social-section">
-                        <div class="contact-social-pills">
-                            <a href="https://www.linkedin.com/in/tanya-sinha-0170742b3" target="_blank"
-                                rel="noopener noreferrer" class="contact-social-pill"
-                                aria-label="Visit my LinkedIn profile">
-                                <i class="fa-brands fa-linkedin"></i> <span>LinkedIn</span>
-                            </a>
-                            <a href="https://github.com/tanya459" target="_blank" rel="noopener noreferrer"
-                                class="contact-social-pill" aria-label="Visit my GitHub profile">
-                                <i class="fa-brands fa-github"></i> <span>GitHub</span>
-                            </a>
-                            <a href="mailto:tanyasinha1514@gmail.com" class="contact-social-pill"
-                                aria-label="Send me an email">
-                                <i class="fa-regular fa-envelope"></i> <span>Email</span>
-                            </a>
-                        </div>
+                    <div class="contact-social-pills">
+                        <a href="https://www.linkedin.com/in/tanya-sinha-0170742b3" target="_blank"
+                            rel="noopener noreferrer" class="contact-social-pill"
+                            aria-label="Visit my LinkedIn profile">
+                            <i class="fa-brands fa-linkedin"></i> <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/tanya459" target="_blank" rel="noopener noreferrer"
+                            class="contact-social-pill" aria-label="Visit my GitHub profile">
+                            <i class="fa-brands fa-github"></i> <span>GitHub</span>
+                        </a>
+                        <a href="mailto:tanyasinha1514@gmail.com" class="contact-social-pill"
+                            aria-label="Send me an email">
+                            <i class="fa-regular fa-envelope"></i> <span>Email</span>
+                        </a>
                     </div>
                 </form>
             </div>
@@ -288,7 +286,6 @@
             circuitPaths.forEach(p => {
                 const len = p.getTotalLength ? Math.ceil(p.getTotalLength()) : 250;
                 p.style.strokeDasharray = len;
-                p.style.strokeDashoffset = len;
             });
 
             const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
