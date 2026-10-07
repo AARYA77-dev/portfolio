@@ -134,4 +134,81 @@
             });
         }
     }
+
+    // Dynamic Sticky Navbar Scroll Morph powered by GSAP
+    const header = document.querySelector("header");
+    const nav = document.querySelector(".nav");
+    if (nav) {
+        let isScrolled = false;
+        if (window.gsap) {
+            gsap.set(nav, { borderRadius: 999 });
+        }
+
+        const updateNavScroll = () => {
+            // Only run navbar scroll animation on desktop viewports (> 768px)
+            if (window.innerWidth <= 768) {
+                if (isScrolled) {
+                    isScrolled = false;
+                    if (header) header.classList.remove("is-scrolled");
+                    nav.classList.remove("is-scrolled");
+                }
+                if (window.gsap) {
+                    gsap.killTweensOf(nav);
+                    gsap.set(nav, { clearProps: "maxWidth,paddingTop,paddingBottom,paddingLeft,paddingRight,y,transform" });
+                }
+                return;
+            }
+
+            const scrollY = window.pageYOffset || document.documentElement.scrollTop || window.scrollY || 0;
+
+            // Hysteresis deadband: trigger scrolled at > 55px, expand back at < 15px (prevents threshold bounce)
+            if (!isScrolled && scrollY > 55) {
+                isScrolled = true;
+                if (header) header.classList.add("is-scrolled");
+                nav.classList.add("is-scrolled");
+
+                if (window.gsap) {
+                    gsap.to(nav, {
+                        maxWidth: 860,
+                        paddingTop: 9,
+                        paddingBottom: 9,
+                        paddingLeft: 20,
+                        paddingRight: 20,
+                        borderRadius: 999,
+                        y: 2,
+                        duration: 0.38,
+                        ease: "power2.out",
+                        overwrite: "auto"
+                    });
+                }
+            } else if (isScrolled && scrollY < 15) {
+                isScrolled = false;
+                if (header) header.classList.remove("is-scrolled");
+                nav.classList.remove("is-scrolled");
+
+                if (window.gsap) {
+                    gsap.to(nav, {
+                        maxWidth: 1200,
+                        paddingTop: 14,
+                        paddingBottom: 14,
+                        paddingLeft: 22,
+                        paddingRight: 22,
+                        borderRadius: 999,
+                        y: 0,
+                        duration: 0.38,
+                        ease: "power2.out",
+                        overwrite: "auto"
+                    });
+                }
+            }
+        };
+
+        window.addEventListener("scroll", updateNavScroll, { passive: true });
+        window.addEventListener("resize", () => {
+            updateNavScroll();
+        }, { passive: true });
+
+        // Initial check
+        updateNavScroll();
+    }
 })();

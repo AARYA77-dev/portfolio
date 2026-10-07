@@ -484,6 +484,12 @@ body.dark .nav {
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 245, 255, 0.12);
 }
 
+body.dark .nav.is-scrolled {
+    background: rgba(6, 13, 26, 0.76);
+    border: 1px solid rgba(0, 245, 255, 0.4);
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.7), 0 0 24px rgba(0, 245, 255, 0.18);
+}
+
 body.dark .darkModeLabel {
     background: rgba(4, 7, 17, 0.85);
     border: 1px solid rgba(0, 245, 255, 0.35);
@@ -515,6 +521,12 @@ body:not(.dark) .nav {
     background: rgba(255, 255, 255, 0.92);
     border: 1px solid rgba(0, 180, 216, 0.2);
     box-shadow: 0 16px 40px rgba(0, 180, 216, 0.12);
+}
+
+body:not(.dark) .nav.is-scrolled {
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(0, 180, 216, 0.32);
+    box-shadow: 0 16px 42px rgba(0, 180, 216, 0.16);
 }
 
 body:not(.dark) .logo a,
@@ -634,18 +646,46 @@ body:not(.dark) .project-icon {
     font-weight: 100;
 }
 
+header {
+    position: sticky;
+    top: 12px;
+    height: 64px;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    margin-bottom: 16px;
+    transition: none;
+}
+
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
+    width: calc(100% - 24px);
+    max-width: 1200px;
+    margin: 0 auto;
     background: rgba(37, 99, 235, 0.92);
-    padding: 14px 18px;
-    border-radius: var(--radius-lg);
-    margin-bottom: 16px;
+    padding: 14px 22px;
+    border-radius: var(--radius-full);
     box-shadow: 0 16px 40px rgba(37, 99, 235, 0.22);
     z-index: 900;
-    backdrop-filter: blur(16px);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    pointer-events: auto;
+    /* Prevent global * { transition: transform } from interfering with GSAP */
+    transition-property: background-color, border-color, box-shadow, backdrop-filter, -webkit-backdrop-filter;
+    transition-duration: 0.35s;
+    transition-timing-function: ease;
+}
+
+/* Scrolled state: blurry frosted glass (dimensions smoothly tweened via GSAP) */
+.nav.is-scrolled {
+    backdrop-filter: blur(24px) saturate(190%);
+    -webkit-backdrop-filter: blur(24px) saturate(190%);
 }
 
 .nav-right {
@@ -851,7 +891,7 @@ body:not(.dark) .resume-btn:hover {
 
     .nav {
         padding: 10px 14px;
-        border-radius: var(--radius-inner);
+        border-radius: var(--radius-full);
     }
 
     .nav-right {
@@ -885,9 +925,16 @@ body:not(.dark) .resume-btn:hover {
 
 @media (max-width: 768px) {
 
+    header {
+        top: 8px;
+        height: 56px;
+        margin-bottom: 12px;
+    }
+
     .nav {
-        padding: 10px 12px;
-        border-radius: var(--radius-inner);
+        width: calc(100% - 16px);
+        padding: 10px 14px;
+        border-radius: var(--radius-full);
     }
 
     .nav-right {
@@ -1796,7 +1843,7 @@ body:not(.dark) .skill-name {
     display: grid;
     grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.6fr);
     align-items: center;
-    gap: 28px;
+    gap: clamp(50px, 5vw, 80px);
 }
 
 .hex-prism-stage {
@@ -1969,7 +2016,7 @@ body:not(.dark) .hex-prism-cap {
 @media (max-width: 900px) {
     .skills-showcase {
         grid-template-columns: 1fr;
-        gap: 10px;
+        gap: 40px;
     }
 
     .hex-prism-stage {
@@ -1989,6 +2036,10 @@ body:not(.dark) .hex-prism-cap {
 }
 
 @media (max-width: 768px) {
+    .skills-showcase {
+        gap: 44px;
+    }
+
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 14px;
