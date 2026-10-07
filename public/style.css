@@ -2354,11 +2354,6 @@ body:not(.dark) .project-title {
     border: 1px solid rgba(0, 245, 255, 0.25);
 }
 
-body:not(.dark) .tech {
-    background: #e0f2fe;
-    color: #0369a1;
-}
-
 .project-buttons {
     display: flex;
     flex-wrap: wrap;

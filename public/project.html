@@ -293,26 +293,7 @@
             </span>
         </div>
     </footer>
-    <script>document.getElementById('copyright-year').textContent = new Date().getFullYear();</script>
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
-        import {
-            getAnalytics
-        } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-analytics.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyAc2oGnS6uWlaTagUB47HWW_clFNZ2cYyE",
-            authDomain: "tanya-s-portfolio.firebaseapp.com",
-            projectId: "tanya-s-portfolio",
-            storageBucket: "tanya-s-portfolio.firebasestorage.app",
-            messagingSenderId: "524721923301",
-            appId: "1:524721923301:web:d12d4c4d019446a5d3a00c",
-            measurementId: "G-ETLNW3B878"
-        };
-        const app = initializeApp(firebaseConfig);
-
-        const analytics = getAnalytics(app);
-    </script>
+    <script type="module" src="firebase.js"></script>
 </body>
 
 </html>

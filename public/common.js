@@ -1,6 +1,9 @@
 (() => {
     'use strict';
 
+    const copyrightYear = document.getElementById("copyright-year");
+    if (copyrightYear) copyrightYear.textContent = new Date().getFullYear();
+
     // Theme Toggle Functionality
     const THEME_KEY = "theme";
     const toggle = document.getElementById("toggle");
