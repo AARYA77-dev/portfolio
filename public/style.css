@@ -636,6 +636,7 @@ header {
     pointer-events: none;
     margin-bottom: 16px;
     transition: none;
+    will-change: transform;
 }
 
 .nav {

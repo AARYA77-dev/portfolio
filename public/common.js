@@ -151,10 +151,10 @@
                     isScrolled = false;
                     if (header) header.classList.remove("is-scrolled");
                     nav.classList.remove("is-scrolled");
-                }
-                if (window.gsap) {
-                    gsap.killTweensOf(nav);
-                    gsap.set(nav, { clearProps: "maxWidth,paddingTop,paddingBottom,paddingLeft,paddingRight,y,transform" });
+                    if (window.gsap) {
+                        gsap.killTweensOf(nav);
+                        gsap.set(nav, { clearProps: "maxWidth,paddingTop,paddingBottom,paddingLeft,paddingRight,y,transform" });
+                    }
                 }
                 return;
             }
