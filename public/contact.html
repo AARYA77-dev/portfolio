@@ -210,8 +210,6 @@
 
                 <!-- Contact Form -->
                 <form id="contactForm">
-                    <input type="hidden" name="topic" id="selectedTopic" value="Data Analytics & BI">
-
                     <div class="input-group">
                         <label for="userName">
                             <i class="fa-regular fa-user"></i> Your Name <span class="req">*</span>
@@ -360,13 +358,11 @@
                 const name = document.getElementById("userName").value.trim();
                 const email = document.getElementById("userEmail").value.trim();
                 const message = document.getElementById("userMessage").value.trim();
-                const topic = document.getElementById("selectedTopic") ? document.getElementById("selectedTopic").value : "General";
 
                 try {
                     await addDoc(collection(db, "contacts"), {
                         name,
                         email,
-                        topic,
                         message,
                         createdAt: serverTimestamp()
                     });
