@@ -1646,13 +1646,7 @@ nav,
 
 /* --- SKILLS SECTION --- */
 
-.word {
-    display: inline-block;
-    transform-style: preserve-3d;
-    font-size: 36px;
-    text-align: center;
-    letter-spacing: 4px;
-}
+
 
 .skills-section {
     padding: 80px 20px;
@@ -2071,11 +2065,7 @@ body:not(.dark) .hex-prism-cap {
     letter-spacing: 4px;
 }
 
-.project-maintitle {
-    font-size: 36px;
-    text-align: center;
-    letter-spacing: 4px;
-}
+
 
 
 .projects-section {
@@ -2089,11 +2079,17 @@ body:not(.dark) .hex-prism-cap {
 
 .projects-header-container {
     display: flex;
+    flex-direction: column;
+    gap: 8px;
     margin-top: 10px;
     align-items: center;
     justify-content: center;
     max-width: 1200px;
     margin: 10px auto;
+}
+
+.projects-header-container .title {
+    margin-bottom: 4px;
 }
 
 .projects-container {
@@ -2441,14 +2437,22 @@ body:not(.dark) .project-card {
     gap: 22px;
 }
 
-.about-header-wrap {
+.about-header-wrap,
+.skills-header-wrap,
+.projects-header-wrap {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.about-header-wrap .title {
+.about-header-wrap .title,
+.skills-header-wrap .title,
+.projects-header-wrap .title {
     margin-bottom: 4px;
+}
+
+.projects-header-wrap {
+    margin-bottom: 30px;
 }
 
 .about-description {
@@ -2527,7 +2531,9 @@ body:not(.dark) .about-description {
         gap: 36px;
     }
 
-    .about-header-wrap {
+    .about-header-wrap,
+    .skills-header-wrap,
+    .projects-header-wrap {
         align-items: center;
     }
 
@@ -2762,6 +2768,15 @@ body:not(.dark) .copyright-made {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 8px;
+}
+
+.contact-header-wrap .title {
+    margin-bottom: 4px;
+}
+
+.contact-header-wrap .skills-title-line {
+    margin-bottom: 12px;
 }
 
 .contact-deck {

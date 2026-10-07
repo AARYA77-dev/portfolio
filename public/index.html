@@ -366,7 +366,7 @@
         <section id="skills" class="skills-section stacking-card">
             <div class="skills-container">
                 <div class="skills-header-wrap">
-                    <h2 class="skills-area-title">SKILL AREA</h2>
+                    <h2 class="title">&lt;My Skills /&gt;</h2>
                     <div class="skills-title-line"></div>
                 </div>
                 <p class="skills-subtitle">
@@ -509,7 +509,10 @@
             </div>
         </section>
         <section id="projects" class="projects-section">
-            <h2 class="project-maintitle animated-header">My Projects</h2>
+            <div class="projects-header-wrap">
+                <h2 class="title">&lt;My Projects /&gt;</h2>
+                <div class="skills-title-line"></div>
+            </div>
             <div class="featured-card-home stacking-card">
                 <div class="featured-image"><img src="Ai-finance-advisor.webp" loading="lazy" decoding="async"
                         alt="AI Finance Advisor" width="1822" height="963">
@@ -641,7 +644,6 @@
     const isReload = performance.getEntriesByType('navigation')[0]?.type === 'reload';
     const hasAnimated = sessionStorage.getItem("homeAnimated");
 
-    titleAnimation();
     stackingAnimation();
 
     if (!hasAnimated || isReload) {
@@ -862,66 +864,6 @@
                 { y: 0, opacity: 0.6, duration: 0.8 },
                 "-=0.4"
             );
-    }
-    function titleAnimation() {
-        gsap.registerPlugin(ScrollTrigger);
-
-        const textEls = document.querySelectorAll(".animated-header");
-
-        textEls.forEach((textEl) => {
-
-            const text = textEl.textContent || "";
-            const wordList = text.split(" ");
-
-            textEl.replaceChildren();
-            wordList.forEach((word, index) => {
-                const wordEl = document.createElement("h2");
-                wordEl.className = "word";
-                wordEl.textContent = word;
-                textEl.appendChild(wordEl);
-
-                if (index < wordList.length - 1) {
-                    textEl.appendChild(document.createTextNode(" "));
-                }
-            });
-
-            const words = textEl.querySelectorAll(".word");
-
-            words.forEach(word => {
-                gsap.set(word.parentNode, { perspective: 1000 });
-            });
-
-            gsap.fromTo(
-                words,
-                {
-                    opacity: 0,
-                    z: () => gsap.utils.random(500, 900),
-                    xPercent: () => gsap.utils.random(-100, 100),
-                    yPercent: () => gsap.utils.random(-50, 50),
-                    rotationX: () => gsap.utils.random(-90, 90),
-                },
-                {
-                    opacity: 1,
-                    z: 0,
-                    xPercent: 0,
-                    yPercent: 0,
-                    rotationX: 0,
-                    duration: 0.8,
-                    ease: "expo.out",
-                    stagger: {
-                        each: 0.1,
-                        from: "random"
-                    },
-                    scrollTrigger: {
-                        trigger: textEl,
-                        start: "top 80%",
-                        toggleActions: "play none none none",
-                        scroller: document.body,
-                    }
-                }
-            );
-
-        });
     }
 
     function stackingAnimation() {
