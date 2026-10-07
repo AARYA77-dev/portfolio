@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Press+Start+2P&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 @property --a {
     syntax: '<angle>';
@@ -214,19 +213,6 @@ h1 span {
     will-change: clip-path, transform, opacity;
 }
 
-.loader-brand-mark {
-    width: 46px;
-    height: 46px;
-    color: #00f5ff;
-    margin-bottom: 20px;
-    filter: drop-shadow(0 0 16px rgba(0, 245, 255, 0.45));
-}
-
-.loader-brand-mark svg {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
 
 .loader-title-wrap {
     display: flex;
@@ -251,14 +237,6 @@ h1 span {
     line-height: 1;
 }
 
-.loader-tag {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    color: #00f5ff;
-    font-family: monospace;
-    opacity: 0.85;
-}
 
 .loader-circle-wrap {
     position: relative;
@@ -1714,19 +1692,6 @@ nav,
     margin-bottom: 12px;
 }
 
-.skills-area-title {
-    font-size: 32px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    color: #ffffff;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-    display: inline-block;
-}
-
-body:not(.dark) .skills-area-title {
-    color: var(--text-light);
-}
 
 .skills-title-line {
     width: 48px;
@@ -2325,6 +2290,8 @@ body:not(.dark) .featured-card-home {
 .featured-image img {
     width: 100%;
     height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
 }
 
 .project-icon img {
@@ -2612,6 +2579,7 @@ body:not(.dark) .about-description {
     max-width: 100%;
     width: clamp(260px, 34vw, 440px);
     height: auto;
+    aspect-ratio: 460 / 421;
     object-fit: contain;
     filter: drop-shadow(0 15px 35px rgba(0, 245, 255, 0.2));
     transition: transform 0.4s ease, filter 0.4s ease;
